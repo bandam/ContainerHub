@@ -9,6 +9,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
+import android.app.FragmentTransaction;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -33,8 +34,8 @@ public class MainActivity extends Activity {
 	private ListView mDrawerList;
 	private ActionBarDrawerToggle mDrawerToggle;
 
-	private List<RowItem> rowItems;
-	private CustomAdapter adapter;
+	private List<MenuRowItem> rowItems;
+	private MenuCustomAdapter adapter;
 
 	@SuppressLint("NewApi")
 	@Override
@@ -51,17 +52,17 @@ public class MainActivity extends Activity {
 		mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
 		mDrawerList = (ListView) findViewById(R.id.slider_list);
 
-		rowItems = new ArrayList<RowItem>();
+		rowItems = new ArrayList<MenuRowItem>();
 
 		for (int i = 0; i < menuTitles.length; i++) {
-			RowItem item = new RowItem(menuTitles[i], menuIcons.getResourceId(
+			MenuRowItem item = new MenuRowItem(menuTitles[i], menuIcons.getResourceId(
 					i, -1));
 			rowItems.add(item);
 		}
 
 		menuIcons.recycle();
 
-		adapter = new CustomAdapter(getApplicationContext(), rowItems);
+		adapter = new MenuCustomAdapter(getApplicationContext(), rowItems);
 
 		mDrawerList.setAdapter(adapter);
 		mDrawerList.setOnItemClickListener(new SlideitemListener());
@@ -109,7 +110,7 @@ public class MainActivity extends Activity {
 
 		switch (position) {
 		case 0:
-			fragment = new FB_Fragment();
+			fragment = new ContainerList_Fragment();
 			break;
 		case 1:
 			fragment = new GP_Fragment();
@@ -125,8 +126,11 @@ public class MainActivity extends Activity {
 
 		if (fragment != null) {
 			FragmentManager fragmentManager = getFragmentManager();
-			fragmentManager.beginTransaction()
-					.replace(R.id.frame_container, fragment).commit();
+			FragmentTransaction transaction = fragmentManager.beginTransaction();
+			
+			transaction.replace(R.id.frame_container, fragment);
+			transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+			transaction.commit();
 
 			// update selected item and title, then close the drawer
 			setTitle(menuTitles[position]);

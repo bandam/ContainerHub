@@ -9,14 +9,14 @@
     <string name="action_search">Search</string>
 
     <string-array name="titles">
-        <item >Facebook</item>
-        <item>Google-Plus</item>
-        <item >Google-Maps</item>
+        <item >Search</item>
+        <item>Post Container</item>
+        <item >I\'m Looking For</item>
     </string-array>
     
     <array name="icons">
-        <item>@drawable/fb</item>
-        <item>@drawable/gplus</item>
-        <item>@drawable/gm</item>
+        <item>@drawable/ic_action_search</item>
+        <item>@drawable/ic_action_paste</item>
+        <item>@drawable/ic_action_locate</item>
     </array>
 </resources>
