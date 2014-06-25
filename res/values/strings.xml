@@ -7,6 +7,8 @@
     <string name="imgmaps">Google-Maps icon display</string>
     <string name="imggplus">Google-Plus icon display</string>
     <string name="action_search">Search</string>
+    
+    <string name = "container_item_title_location">LOCATION:</string>
 
     <string-array name="titles">
         <item >Search</item>

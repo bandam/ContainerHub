@@ -2,17 +2,17 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FAFAFA" >
+    android:background="@color/container_list_divider_color" >
     
     
     <ListView 
         android:layout_height="wrap_content"
-        android:id="@+id/containerList"
+        android:id="@+id/container_list_layout"
         android:layout_marginTop="20dp"
         android:layout_width="320dp"
         android:layout_marginLeft="20dp"
-        android:background="#EFF5FB"
-        android:divider="#FAFAFA"
+        android:background="@color/container_list_background_color"
+        android:divider="@color/container_list_divider_color"
         android:dividerHeight="10dp"/>
 
 </RelativeLayout>

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.view.LayoutInflater;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ProgressBar;
 
 import java.util.List;
 
@@ -30,14 +31,16 @@ public class ContainerItemCustomAdapter extends BaseAdapter{
 		
 		ImageView imageIcon = (ImageView) convertView.findViewById(R.id.icon);
 		TextView titleTile = (TextView) convertView.findViewById(R.id.title);
-		TextView descpTile = (TextView) convertView.findViewById(R.id.description);
+		TextView descpTile = (TextView) convertView.findViewById(R.id.container_location);
+		ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.container_progressbar);
 		
 		ContainerItem currentItem = containerItems.get(position);
 		
 		// Setting the image, title and descriptions
 		imageIcon.setImageResource(currentItem.getIcon());
 		titleTile.setText(currentItem.getTitle());
-		descpTile.setText(currentItem.getDescription());
+		descpTile.setText(currentItem.getLocation());
+		progressBar.setProgress(currentItem.getProgess());
 		
 		return convertView;
 	}

@@ -1,7 +1,6 @@
 package com.amirab_soft.containerhub;
 
 import android.app.Fragment;
-import android.content.res.TypedArray;
 import android.view.View;
 import android.os.Bundle;
 import android.view.ViewGroup;
@@ -16,7 +15,6 @@ public class ContainerList_Fragment extends Fragment{
 	
 	private List<ContainerItem> containerList;
 	private ListView listview;
-	TypedArray menuIcons;
 	private ContainerItemCustomAdapter adapter;
 	
 	private String[] tempTitles = {"Container 1", "Container 2", "Container 3"};
@@ -27,19 +25,18 @@ public class ContainerList_Fragment extends Fragment{
 		super.onCreateView(inflater, container, savedInstanceState);
 		
 		View rootView = inflater.inflate(R.layout.container_list_fragment, container, false);
-		listview = (ListView)rootView.findViewById(R.id.containerList);
-		menuIcons = getResources().obtainTypedArray(R.array.icons);
+		listview = (ListView)rootView.findViewById(R.id.container_list_layout);
+	
 		
 		
 		containerList = new ArrayList<ContainerItem>();
 		// add items to the container list
 		for(int i = 0; i < 3; i++){
 			ContainerItem item = new ContainerItem(tempTitles[i].toUpperCase(), tempDescps[i],
-					menuIcons.getResourceId(i, -1));
+					R.drawable.container_default, 72);
 			containerList.add(item);
 		}
 		
-		menuIcons.recycle();
 		
 		adapter = new ContainerItemCustomAdapter(getActivity(), containerList);
 		listview.setAdapter(adapter);

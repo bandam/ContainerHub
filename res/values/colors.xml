@@ -1,0 +1,8 @@
+<resources>
+    <color name = "default_text_color">#000000</color>
+    <color name = "main_menu_color">#F5FBEF</color>
+    <color name = "main_menu_divider_color">#ffffff</color>
+    <color name = "container_item_text_color">#000000</color>
+    <color name = "container_list_background_color">#EFF5FB</color>
+    <color name = "container_list_divider_color">#FAFAFA</color>
+</resources>

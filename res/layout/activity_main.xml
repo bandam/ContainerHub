@@ -18,8 +18,8 @@
         android:layout_width="240dp"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="#F5FBEF"
-        android:divider="#ffffff"
+        android:background="@color/main_menu_color"
+        android:divider="@color/main_menu_divider_color"
         android:dividerHeight="2dp"/>
         
 </android.support.v4.widget.DrawerLayout>

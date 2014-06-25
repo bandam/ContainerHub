@@ -1,45 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="horizontal"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="20dp"
     android:layout_marginLeft="20dp"
+    android:orientation="horizontal"
+    android:padding="20dp"
     android:paddingLeft="20dp"
-    android:paddingRight="20dp">
-    
-    <ImageView 
-        android:id="@+id/icon"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginLeft="12dp"
-        android:layout_marginRight="12dp"
-        android:contentDescription="@string/imgdesc"/>
-    
+    android:paddingRight="20dp" >
+
+    <!-- Icon and status bar -->
+
     <LinearLayout
-        android:orientation="vertical"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        >
-        
-        <TextView 
-        android:id="@+id/title"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:textColor="#000000"
-        android:textSize="10sp"/>
-        
-        <TextView 
-        android:id="@+id/description"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical"
-        android:textColor="#000000"
-        android:textSize="8sp"
-        />
-        
+        android:orientation="vertical" >
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="12dp"
+            android:layout_marginRight="12dp"
+            android:contentDescription="@string/imgdesc" />
+
+        <ProgressBar
+            android:id="@+id/container_progressbar"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="5dp" />
     </LinearLayout>
-    
+
+    <!-- Container Information -->
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:gravity="center_vertical"
+            android:textColor="@color/container_item_text_color"
+            android:textSize="10sp" />
+
+        <TableLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            >
+
+            <TableRow>
+                <TextView 
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:text="@string/container_item_title_location"
+                   android:textSize="8sp"
+                   android:layout_marginRight="5dp"/>
+
+                <TextView
+                    android:id="@+id/container_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/container_item_text_color"
+                    android:textSize="8sp" />
+            </TableRow>
+        </TableLayout>
+    </LinearLayout>
+
 </LinearLayout>
