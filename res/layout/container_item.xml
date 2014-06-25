@@ -5,8 +5,7 @@
     android:layout_marginLeft="20dp"
     android:orientation="horizontal"
     android:padding="20dp"
-    android:paddingLeft="20dp"
-    android:paddingRight="20dp" >
+    >
 
     <!-- Icon and status bar -->
 
@@ -38,34 +37,83 @@
         android:layout_marginLeft="20dp"
         android:orientation="vertical" >
 
+        <!-- Title -->
+
         <TextView
             android:id="@+id/title"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:gravity="center_vertical"
+            android:textStyle="bold"
             android:textColor="@color/container_item_text_color"
             android:textSize="10sp" />
+
+        <!-- Container description -->
 
         <TableLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             >
 
-            <TableRow>
-                <TextView 
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:text="@string/container_item_title_location"
-                   android:textSize="8sp"
-                   android:layout_marginRight="5dp"/>
+            <!-- Location row -->
+
+            <TableRow
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/container_item_title_location"
+                    android:textSize="9sp" 
+                    />
 
                 <TextView
                     android:id="@+id/container_location"
                     android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/container_item_text_color"
+                    android:textSize="7sp" />
+            </TableRow>
+
+            <!-- Departure date row -->
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="10dp"
+                    android:text="@string/container_item_title_departureDate"
+                    android:textSize="9sp" />
+
+                <TextView
+                    android:id="@+id/departure_date"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/container_item_text_color"
+                    android:textSize="7sp" />
+            </TableRow>
+
+            <!-- ToCity row -->
+
+            <TableRow>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="2dp"
+                    android:text="@string/container_item_title_to"
+                    android:textSize="9sp" />
+
+                <TextView
+                    android:id="@+id/to_destination"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:gravity="center_vertical"
                     android:textColor="@color/container_item_text_color"
-                    android:textSize="8sp" />
+                    android:textSize="7sp" />
             </TableRow>
         </TableLayout>
     </LinearLayout>

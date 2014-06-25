@@ -113,7 +113,7 @@ public class MainActivity extends Activity {
 			fragment = new ContainerList_Fragment();
 			break;
 		case 1:
-			fragment = new GP_Fragment();
+			fragment = new PostContainer_Fragment();
 			break;
 		case 2:
 			fragment = new GM_Fragment();

@@ -9,6 +9,8 @@
     <string name="action_search">Search</string>
     
     <string name = "container_item_title_location">LOCATION:</string>
+    <string name = "container_item_title_departureDate">DEPARTURE DATE:</string>
+    <string name = "container_item_title_to">TO:</string>
 
     <string-array name="titles">
         <item >Search</item>

@@ -7,6 +7,7 @@ import android.view.ViewGroup;
 import android.view.LayoutInflater;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import android.widget.ListView;
@@ -18,7 +19,7 @@ public class ContainerList_Fragment extends Fragment{
 	private ContainerItemCustomAdapter adapter;
 	
 	private String[] tempTitles = {"Container 1", "Container 2", "Container 3"};
-	private String[] tempDescps = {"Description 1", "Description 2", "Description 3"};
+	private String[] tempDescps = {"New York", "Colorado", "James Town"};
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -33,6 +34,7 @@ public class ContainerList_Fragment extends Fragment{
 		// add items to the container list
 		for(int i = 0; i < 3; i++){
 			ContainerItem item = new ContainerItem(tempTitles[i].toUpperCase(), tempDescps[i],
+					java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime()), "Accra",
 					R.drawable.container_default, 72);
 			containerList.add(item);
 		}

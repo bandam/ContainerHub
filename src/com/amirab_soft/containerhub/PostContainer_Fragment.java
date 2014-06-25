@@ -10,11 +10,11 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 
 @SuppressLint("NewApi")
-public class GP_Fragment extends Fragment{
+public class PostContainer_Fragment extends Fragment{
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-		View rootView = inflater.inflate(R.layout.gp_fragement, container, false);
+		View rootView = inflater.inflate(R.layout.post_container_fragment, container, false);
 		return rootView;
 	}
 }

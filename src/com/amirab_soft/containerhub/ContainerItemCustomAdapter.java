@@ -33,6 +33,8 @@ public class ContainerItemCustomAdapter extends BaseAdapter{
 		TextView titleTile = (TextView) convertView.findViewById(R.id.title);
 		TextView descpTile = (TextView) convertView.findViewById(R.id.container_location);
 		ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.container_progressbar);
+		TextView departureDate_view = (TextView) convertView.findViewById(R.id.departure_date);
+		TextView toDestinationView = (TextView)convertView.findViewById(R.id.to_destination);
 		
 		ContainerItem currentItem = containerItems.get(position);
 		
@@ -41,6 +43,8 @@ public class ContainerItemCustomAdapter extends BaseAdapter{
 		titleTile.setText(currentItem.getTitle());
 		descpTile.setText(currentItem.getLocation());
 		progressBar.setProgress(currentItem.getProgess());
+		departureDate_view.setText(currentItem.getDate());
+		toDestinationView.setText(currentItem.getTo());
 		
 		return convertView;
 	}
