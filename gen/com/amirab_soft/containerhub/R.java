@@ -106,26 +106,26 @@ public final class R {
         public static final int main=0x7f080001;
     }
     public static final class string {
-        public static final int action_forgot_password=0x7f05001e;
+        public static final int action_forgot_password=0x7f05001f;
         public static final int action_search=0x7f050006;
         public static final int action_settings=0x7f050001;
-        public static final int action_sign_in_register=0x7f05001c;
-        public static final int action_sign_in_short=0x7f05001d;
+        public static final int action_sign_in_register=0x7f05001d;
+        public static final int action_sign_in_short=0x7f05001e;
         public static final int app_name=0x7f050000;
         public static final int container_item_title_departureDate=0x7f050008;
         /**  List Container Fragment Strings 
          */
         public static final int container_item_title_location=0x7f050007;
         public static final int container_item_title_to=0x7f050009;
-        public static final int error_field_required=0x7f050023;
-        public static final int error_incorrect_password=0x7f050022;
-        public static final int error_invalid_email=0x7f050020;
-        public static final int error_invalid_password=0x7f050021;
+        public static final int error_field_required=0x7f050024;
+        public static final int error_incorrect_password=0x7f050023;
+        public static final int error_invalid_email=0x7f050021;
+        public static final int error_invalid_password=0x7f050022;
         public static final int imgdesc=0x7f050002;
         public static final int imgfb=0x7f050003;
         public static final int imggplus=0x7f050005;
         public static final int imgmaps=0x7f050004;
-        public static final int login_progress_signing_in=0x7f05001f;
+        public static final int login_progress_signing_in=0x7f050020;
         public static final int post_container_button_lable_SelectImage=0x7f050012;
         public static final int post_container_button_lable_upload=0x7f050017;
         public static final int post_container_contentDescription_image=0x7f050010;
@@ -143,11 +143,12 @@ public final class R {
         public static final int post_container_lable_ownerPhone=0x7f050015;
         public static final int post_container_lable_status=0x7f05000d;
         public static final int post_container_textHint_dateFormat=0x7f05000f;
-        public static final int prompt_email=0x7f05001a;
-        public static final int prompt_password=0x7f05001b;
+        public static final int post_container_textHint_location=0x7f050019;
+        public static final int prompt_email=0x7f05001b;
+        public static final int prompt_password=0x7f05001c;
         /**  Login Activity Strings 
          */
-        public static final int title_activity_login=0x7f050019;
+        public static final int title_activity_login=0x7f05001a;
     }
     public static final class style {
         /** 

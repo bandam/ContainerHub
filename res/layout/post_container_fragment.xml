@@ -43,6 +43,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
+                android:hint="@string/post_container_textHint_location"
                 android:ems="10" />
         </TableRow>
 
@@ -62,6 +63,7 @@
                 android:id="@+id/add_contn_form_destionation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:hint="@string/post_container_textHint_location"
                 android:ems="10"
                 android:inputType="textPostalAddress" />
         </TableRow>
@@ -122,6 +124,7 @@
                 android:id="@+id/editText1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:hint="@string/post_container_textHint_dateFormat"
                 android:ems="10"
                 android:inputType="date" />
 
