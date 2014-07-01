@@ -43,8 +43,8 @@ public class ContainerItemCustomAdapter extends BaseAdapter{
 		titleTile.setText(currentItem.getTitle());
 		descpTile.setText(currentItem.getLocation());
 		progressBar.setProgress(currentItem.getProgess());
-		departureDate_view.setText(currentItem.getDate());
-		toDestinationView.setText(currentItem.getTo());
+		departureDate_view.setText(currentItem.getDepartureDate());
+		toDestinationView.setText(currentItem.getDestination());
 		
 		return convertView;
 	}

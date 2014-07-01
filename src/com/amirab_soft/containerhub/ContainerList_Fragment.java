@@ -34,7 +34,9 @@ public class ContainerList_Fragment extends Fragment{
 		// add items to the container list
 		for(int i = 0; i < 3; i++){
 			ContainerItem item = new ContainerItem(tempTitles[i].toUpperCase(), tempDescps[i],
-					java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime()), "Accra",
+					java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime()),
+					java.text.DateFormat.getDateTimeInstance().format(Calendar.getInstance().getTime()),
+					"Accra",
 					R.drawable.container_default, 72);
 			containerList.add(item);
 		}

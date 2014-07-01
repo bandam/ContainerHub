@@ -8,19 +8,56 @@
     <string name="imggplus">Google-Plus icon display</string>
     <string name="action_search">Search</string>
     
-    <string name = "container_item_title_location">LOCATION:</string>
-    <string name = "container_item_title_departureDate">DEPARTURE DATE:</string>
-    <string name = "container_item_title_to">TO:</string>
-
-    <string-array name="titles">
-        <item >Search</item>
-        <item>Post Container</item>
-        <item >I\'m Looking For</item>
-    </string-array>
     
+    <!-- List Container Fragment Strings -->
+    <string name="container_item_title_location">LOCATION:</string>
+    <string name="container_item_title_departureDate">DEPARTURE DATE:</string>
+    <string name="container_item_title_to">TO:</string>
+
+    <!-- Post Container Fragment Strings -->
+    <string name="post_container_lable_containerDetails">Container Details</string>
+    <string name="post_container_lable_location">Location</string>
+    <string name="post_container_lable_destination">Destination</string>
+    <string name="post_container_lable_status">How Full</string>
+    <string name="post_container_lable_depDate">Dep. Date</string>
+    <string name="post_container_textHint_dateFormat">yyyy-mm-dd</string>
+    <string name="post_container_contentDescription_image">container image</string>
+    <string name="post_container_lable_camera">Camera</string>
+    <string name="post_container_button_lable_SelectImage">Select</string>
+    <string name="post_container_lable_ownerDetails">Owner Details</string>
+    <string name="post_container_lable_nameOfOwner">Name</string>
+    <string name="post_container_lable_ownerPhone">Phone</string>
+    <string name="post_container_lable_ownerEmail">Email</string>
+    <string name="post_container_button_lable_upload">Upload</string>
+    <string name="post_container_lable_arrvDate">Arrv. Date</string>
+
+    <!-- Login Activity Strings -->
+    <string name="title_activity_login">Sign in</string>
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in_register"><b>Sign in</b> or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="action_forgot_password">Recover lost password</string>
+    <string name="login_progress_signing_in">Signing in&#8230;</string>
+    <string name="error_invalid_email">This email address is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+
+    
+    <!-- Main Activity String -->
+    <string-array name="titles">
+        <item>Search</item>
+        <item>Post Container</item>
+        <item>I\'m Looking For</item>
+    </string-array>
+
+    
+    <!-- Icon Resources -->
     <array name="icons">
         <item>@drawable/ic_action_search</item>
         <item>@drawable/ic_action_paste</item>
         <item>@drawable/ic_action_locate</item>
     </array>
+
 </resources>
