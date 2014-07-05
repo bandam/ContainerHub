@@ -44,6 +44,9 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
+    
+    <!-- Post Container Activity String -->
+    <string name="title_postContainer_Activity">Post A Container</string>
 
     
     <!-- Main Activity String -->

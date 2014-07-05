@@ -1,4 +1,4 @@
-package com.amirab_soft.containerhub;
+package com.amirab_soft.containerhub_helpers;
 
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
@@ -9,6 +9,8 @@ import android.content.Context;
 import java.util.List;
 
 import com.amirab_soft.containerhub.R;
+import com.amirab_soft.containerhub.R.id;
+import com.amirab_soft.containerhub.R.layout;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +21,7 @@ public class MenuCustomAdapter extends BaseAdapter{
 	Context context;
 	List<MenuRowItem> rowItem;
 	
-	MenuCustomAdapter(Context context, List<MenuRowItem> rowItem){
+	public MenuCustomAdapter(Context context, List<MenuRowItem> rowItem){
 		this.context = context;
 		this.rowItem = rowItem;
 	}

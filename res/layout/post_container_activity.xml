@@ -121,7 +121,7 @@
                 android:text="@string/post_container_lable_arrvDate" />
 
             <EditText
-                android:id="@+id/editText1"
+                android:id="@+id/post_container_arrivalDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/post_container_textHint_dateFormat"
@@ -134,9 +134,9 @@
 
     <!-- Selected Container Icon Image -->
     <ImageView
-        android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/post_container_containerImage"
+        android:layout_width="50sp"
+        android:layout_height="50sp"
         android:contentDescription="@string/post_container_contentDescription_image"
         android:src="@drawable/container_default" />
 
@@ -147,7 +147,7 @@
         android:layout_marginBottom="20dp" >
 
         <Button
-            android:id="@+id/add_contn_cameraImg"
+            android:id="@+id/post_contn_capturecameraImg"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -156,12 +156,12 @@
             android:text="@string/post_container_lable_camera" />
 
         <Button
-            android:id="@+id/add_contn_selectImg"
+            android:id="@+id/post_contn_selectImg"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
-            android:layout_toRightOf="@+id/add_contn_cameraImg"
+            android:layout_toRightOf="@+id/post_contn_capturecameraImg"
             android:text="@string/post_container_button_lable_SelectImage"/>
 
     </RelativeLayout>

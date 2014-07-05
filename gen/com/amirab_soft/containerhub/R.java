@@ -41,32 +41,32 @@ public final class R {
     public static final class id {
         public static final int action_forgot_password=0x7f090031;
         public static final int action_settings=0x7f090032;
-        public static final int add_contn_cameraImg=0x7f090024;
         public static final int add_contn_form_departureDate=0x7f09001f;
         public static final int add_contn_form_destionation=0x7f090019;
         public static final int add_contn_form_ownerEmail=0x7f09002f;
         public static final int add_contn_form_ownerName=0x7f090029;
         public static final int add_contn_form_ownerPhone=0x7f09002c;
         public static final int add_contn_form_progress=0x7f09001c;
-        public static final int add_contn_selectImg=0x7f090025;
         public static final int add_contn_uploadForm=0x7f090030;
         public static final int container_list_layout=0x7f090010;
         public static final int container_location=0x7f09000d;
         public static final int container_progressbar=0x7f09000b;
         public static final int departure_date=0x7f09000e;
         public static final int drawer_layout=0x7f090007;
-        public static final int editText1=0x7f090022;
         public static final int email=0x7f090003;
         public static final int form_container_location=0x7f090016;
         public static final int frame_container=0x7f090008;
         public static final int icon=0x7f09000a;
-        public static final int imageView1=0x7f090023;
         public static final int imageView2=0x7f090011;
         public static final int login=0x7f090005;
         public static final int login_form=0x7f090002;
         public static final int login_status=0x7f090000;
         public static final int login_status_message=0x7f090001;
         public static final int password=0x7f090004;
+        public static final int post_container_arrivalDate=0x7f090022;
+        public static final int post_container_containerImage=0x7f090023;
+        public static final int post_contn_capturecameraImg=0x7f090024;
+        public static final int post_contn_selectImg=0x7f090025;
         public static final int scrollView1=0x7f090012;
         public static final int sign_in_button=0x7f090006;
         public static final int slider_list=0x7f090009;
@@ -99,7 +99,7 @@ public final class R {
         public static final int gm_fragement=0x7f030004;
         public static final int gp_fragement=0x7f030005;
         public static final int menu_list_item=0x7f030006;
-        public static final int post_container_fragment=0x7f030007;
+        public static final int post_container_activity=0x7f030007;
     }
     public static final class menu {
         public static final int login=0x7f080000;
@@ -149,6 +149,9 @@ public final class R {
         /**  Login Activity Strings 
          */
         public static final int title_activity_login=0x7f05001a;
+        /**  Post Container Activity String 
+         */
+        public static final int title_postContainer_Activity=0x7f050025;
     }
     public static final class style {
         /** 

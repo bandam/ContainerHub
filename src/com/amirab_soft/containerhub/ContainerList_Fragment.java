@@ -10,6 +10,13 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import com.amirab_soft.containerhub.R;
+import com.amirab_soft.containerhub.R.drawable;
+import com.amirab_soft.containerhub.R.id;
+import com.amirab_soft.containerhub.R.layout;
+import com.amirab_soft.containerhub_helpers.ContainerItem;
+import com.amirab_soft.containerhub_helpers.ContainerItemCustomAdapter;
+
 import android.widget.ListView;
 
 public class ContainerList_Fragment extends Fragment{

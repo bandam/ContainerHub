@@ -3,14 +3,19 @@
     package="com.amirab_soft.containerhub"
     android:versionCode="1"
     android:versionName="1.0" >
+    
+    <uses-feature android:name="android.hardware.camera"
+        android:required="true"/>
 
     <uses-sdk
         android:minSdkVersion="11"
         android:targetSdkVersion="19" />
-    
+
     <!-- Internet Permission -->
-    <uses-permission android:name="android.permission.INTERNET"/>
-    
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
@@ -29,8 +34,12 @@
             android:name="com.amirab_soft.containerhub.LoginActivity"
             android:label="@string/title_activity_login"
             android:windowSoftInputMode="adjustResize|stateVisible" >
-
+        </activity>
+        <activity 
+            android:name="com.amirab_soft.containerhub.PostContainer_Activity"
+            android:label="@string/title_postContainer_Activity">
+            
         </activity>
     </application>
-    
+
 </manifest>

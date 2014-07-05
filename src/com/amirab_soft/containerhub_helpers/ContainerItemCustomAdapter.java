@@ -1,4 +1,4 @@
-package com.amirab_soft.containerhub;
+package com.amirab_soft.containerhub_helpers;
 
 import android.widget.BaseAdapter;
 import android.app.Activity;
@@ -12,12 +12,16 @@ import android.widget.ProgressBar;
 
 import java.util.List;
 
+import com.amirab_soft.containerhub.R;
+import com.amirab_soft.containerhub.R.id;
+import com.amirab_soft.containerhub.R.layout;
+
 public class ContainerItemCustomAdapter extends BaseAdapter{
 	
 	Context context;
 	List<ContainerItem> containerItems;
 	
-	ContainerItemCustomAdapter(Context context, List<ContainerItem> containerItems){
+	public ContainerItemCustomAdapter(Context context, List<ContainerItem> containerItems){
 		this.context = context;
 		this.containerItems = containerItems;
 	}

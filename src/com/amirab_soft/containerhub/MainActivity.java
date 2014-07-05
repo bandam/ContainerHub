@@ -4,12 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.amirab_soft.containerhub.R;
+import com.amirab_soft.containerhub_helpers.MenuCustomAdapter;
+import com.amirab_soft.containerhub_helpers.MenuRowItem;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.content.res.TypedArray;
 import android.os.Bundle;
@@ -21,6 +24,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+
+import com.amirab_soft.containerhub_helpers.*;
 
 public class MainActivity extends Activity {
 	String[] menuTitles;
@@ -107,13 +112,14 @@ public class MainActivity extends Activity {
 	@SuppressLint("NewApi")
 	private void updateDisplay(int position) {
 		Fragment fragment = null;
+		Intent startPostContainer = new Intent(getBaseContext(), PostContainer_Activity.class);
 
 		switch (position) {
 		case 0:
 			fragment = new ContainerList_Fragment();
 			break;
 		case 1:
-			fragment = new PostContainer_Fragment();
+			startActivity(startPostContainer);
 			break;
 		case 2:
 			fragment = new GM_Fragment();
