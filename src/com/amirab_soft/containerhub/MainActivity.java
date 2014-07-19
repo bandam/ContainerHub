@@ -25,8 +25,6 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import com.amirab_soft.containerhub_helpers.*;
-
 public class MainActivity extends Activity {
 	String[] menuTitles;
 	TypedArray menuIcons;
@@ -78,6 +76,7 @@ public class MainActivity extends Activity {
 
 		mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout,
 				R.drawable.ic_drawer, R.string.app_name, R.string.app_name) {
+			@Override
 			public void onDrawerClosed(View view) {
 				getActionBar().setTitle(mTitle);
 
@@ -85,6 +84,7 @@ public class MainActivity extends Activity {
 				invalidateOptionsMenu();
 			}
 
+			@Override
 			public void onDrawerOpened(View drawerView) {
 				getActionBar().setTitle(mDrawerTitle);
 				// call onPrepareOptionsMenu() to hide action bar icons

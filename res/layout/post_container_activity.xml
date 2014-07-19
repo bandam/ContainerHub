@@ -39,7 +39,7 @@
                 android:text="@string/post_container_lable_location" />
 
             <EditText
-                android:id="@+id/form_container_location"
+                android:id="@+id/post_contn_form_containerLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="textPostalAddress"
@@ -60,7 +60,7 @@
                 android:text="@string/post_container_lable_destination" />
 
             <EditText
-                android:id="@+id/add_contn_form_destionation"
+                android:id="@+id/post_contn_form_containerDestionation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/post_container_textHint_location"
@@ -82,7 +82,7 @@
                  />
 
             <SeekBar
-                android:id="@+id/add_contn_form_progress"
+                android:id="@+id/post_contn_form_containerProgress"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
         </TableRow>
@@ -100,7 +100,7 @@
                 android:text="@string/post_container_lable_depDate" />
 
             <EditText
-                android:id="@+id/add_contn_form_departureDate"
+                android:id="@+id/post_contn_form_containerDepartureDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/post_container_textHint_dateFormat"
@@ -121,7 +121,7 @@
                 android:text="@string/post_container_lable_arrvDate" />
 
             <EditText
-                android:id="@+id/post_container_arrivalDate"
+                android:id="@+id/post_contn_form_containerArrivalDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:hint="@string/post_container_textHint_dateFormat"
@@ -196,7 +196,7 @@
                 android:text="@string/post_container_lable_nameOfOwner" />
 
             <EditText
-                android:id="@+id/add_contn_form_ownerName"
+                android:id="@+id/post_contn_form_ownerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -219,7 +219,7 @@
                 android:text="@string/post_container_lable_ownerPhone" />
 
             <EditText
-                android:id="@+id/add_contn_form_ownerPhone"
+                android:id="@+id/post_contn_form_ownerPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -239,7 +239,7 @@
                 android:text="@string/post_container_lable_ownerEmail" />
 
             <EditText
-                android:id="@+id/add_contn_form_ownerEmail"
+                android:id="@+id/post_contn_form_ownerEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"
@@ -253,7 +253,7 @@
         android:layout_height="wrap_content" >
 
         <Button
-            android:id="@+id/add_contn_uploadForm"
+            android:id="@+id/post_contn_uploadContainer"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

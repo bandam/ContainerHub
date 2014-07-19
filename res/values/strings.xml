@@ -47,6 +47,10 @@
     
     <!-- Post Container Activity String -->
     <string name="title_postContainer_Activity">Post A Container</string>
+    
+    
+    <!-- Container List Activity -->
+    <string name="title_containerList_Activity">Container List</string>
 
     
     <!-- Main Activity String -->

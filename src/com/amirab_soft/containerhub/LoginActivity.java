@@ -169,7 +169,6 @@ public class LoginActivity extends Activity {
 			mAuthTask = new UserLoginTask();
 			mAuthTask.execute();
 			
-			
 		}
 	}
 
@@ -251,9 +250,7 @@ public class LoginActivity extends Activity {
 						return false;
 					}
 				}
-		
-				// Simulate network access.
-			
+					
 			} 
 			catch (JSONException e) {
 				e.printStackTrace();

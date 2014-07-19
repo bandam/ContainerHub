@@ -3,9 +3,10 @@
     package="com.amirab_soft.containerhub"
     android:versionCode="1"
     android:versionName="1.0" >
-    
-    <uses-feature android:name="android.hardware.camera"
-        android:required="true"/>
+
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
 
     <uses-sdk
         android:minSdkVersion="11"
@@ -24,6 +25,11 @@
         <activity
             android:name="com.amirab_soft.containerhub.MainActivity"
             android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name="com.amirab_soft.containerhub.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -31,14 +37,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.amirab_soft.containerhub.LoginActivity"
-            android:label="@string/title_activity_login"
-            android:windowSoftInputMode="adjustResize|stateVisible" >
-        </activity>
-        <activity 
             android:name="com.amirab_soft.containerhub.PostContainer_Activity"
-            android:label="@string/title_postContainer_Activity">
-            
+            android:label="@string/title_postContainer_Activity" >
         </activity>
     </application>
 
