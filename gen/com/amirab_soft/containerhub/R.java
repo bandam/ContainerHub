@@ -55,6 +55,9 @@ public final class R {
         public static final int containerDetails_containerImage=0x7f0a000a;
         public static final int containerDetails_containerLocation=0x7f0a000b;
         public static final int containerDetails_departureDate=0x7f0a000d;
+        public static final int containerDetails_ownerEmail=0x7f0a0020;
+        public static final int containerDetails_ownerName=0x7f0a0019;
+        public static final int containerDetails_ownerPhone=0x7f0a001c;
         public static final int containerDetails_toDestination=0x7f0a000c;
         public static final int containerInfo_pager=0x7f0a0022;
         public static final int container_list_layout=0x7f0a0024;
@@ -81,9 +84,6 @@ public final class R {
         public static final int post_contn_form_containerDestionation=0x7f0a002f;
         public static final int post_contn_form_containerLocation=0x7f0a002c;
         public static final int post_contn_form_containerProgress=0x7f0a0032;
-        public static final int post_contn_form_ownerEmail=0x7f0a0020;
-        public static final int post_contn_form_ownerName=0x7f0a0019;
-        public static final int post_contn_form_ownerPhone=0x7f0a001c;
         public static final int post_contn_selectImg=0x7f0a003b;
         public static final int post_contn_uploadContainer=0x7f0a003c;
         public static final int scrollView1=0x7f0a0029;

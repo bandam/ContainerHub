@@ -19,6 +19,9 @@ public class ContainerInfo extends Fragment{
 		TextView departureDate = (TextView)containerDetails.findViewById(R.id.containerDetails_departureDate);
 		ImageView containerImage = (ImageView)containerDetails.findViewById(R.id.containerDetails_containerImage);
 		TextView arrivalDate = (TextView)containerDetails.findViewById(R.id.containerDetails_arrivalDate);
+		TextView ownerName = (TextView)containerDetails.findViewById(R.id.containerDetails_ownerName);
+		TextView ownerPhone = (TextView)containerDetails.findViewById(R.id.containerDetails_ownerPhone);
+		TextView ownerEmail = (TextView)containerDetails.findViewById(R.id.containerDetails_ownerEmail);
 		
 		
 		//Get the selected container from the singleton object
@@ -28,6 +31,9 @@ public class ContainerInfo extends Fragment{
 		departureDate.setText(currentContainer.getDeparture_date());
 		containerImage.setImageDrawable(currentContainer.getIcon());
 		arrivalDate.setText(currentContainer.getArrival_date());
+		ownerName.setText(currentContainer.getOwner_name());
+		ownerPhone.setText(currentContainer.getOwner_tell());
+		ownerEmail.setText(currentContainer.getOwner_email());
 		
 		return containerDetails;
 	}

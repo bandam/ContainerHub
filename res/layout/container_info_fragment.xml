@@ -256,7 +256,7 @@
                 android:textSize="@dimen/containerInfo_majorHeadings_textsize" />
 
             <TextView
-                android:id="@+id/post_contn_form_ownerName"
+                android:id="@+id/containerDetails_ownerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10" />
@@ -277,7 +277,7 @@
                 android:textSize="@dimen/containerInfo_majorHeadings_textsize" />
 
             <TextView
-                android:id="@+id/post_contn_form_ownerPhone"
+                android:id="@+id/containerDetails_ownerPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10" />
@@ -308,7 +308,7 @@
                 android:textSize="@dimen/containerInfo_majorHeadings_textsize" />
 
             <TextView
-                android:id="@+id/post_contn_form_ownerEmail"
+                android:id="@+id/containerDetails_ownerEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10" />

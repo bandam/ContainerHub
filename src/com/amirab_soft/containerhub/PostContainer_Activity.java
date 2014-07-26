@@ -88,9 +88,9 @@ public class PostContainer_Activity extends Activity{
 		container_departureDate = (EditText)findViewById(R.id.post_contn_form_containerDepartureDate);
 		container_arrivalDate = (EditText)findViewById(R.id.post_contn_form_containerArrivalDate);
 		
-		container_ownerName = (EditText)findViewById(R.id.post_contn_form_ownerName);
-		container_ownerPhone = (EditText)findViewById(R.id.post_contn_form_ownerPhone);
-		container_ownerEmail = (EditText)findViewById(R.id.post_contn_form_ownerEmail);
+		container_ownerName = (EditText)findViewById(R.id.containerDetails_ownerName);
+		container_ownerPhone = (EditText)findViewById(R.id.containerDetails_ownerPhone);
+		container_ownerEmail = (EditText)findViewById(R.id.containerDetails_ownerEmail);
 
 		
 		/*Attach a listener to selectImage button*/

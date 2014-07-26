@@ -3,8 +3,10 @@ package com.amirab_soft.containerhub;
 import android.graphics.drawable.Drawable;
 
 public class CurrentContainer {
-	
-	//Class Variable
+
+	// Class Variable
+	private int uid;
+	private int cid;
 	private String title;
 	private String location;
 	private String departure_date;
@@ -12,19 +14,23 @@ public class CurrentContainer {
 	private String destination;
 	private Drawable icon;
 	private int progress;
-	
+	private String owner_name;
+	private String owner_email;
+	private String owner_tell;
+	private String owner_current_city;
+
 	// Singleton Container instance to return
 	private static CurrentContainer instance = null;
-	
-	
+
 	// Constructor to defeat Instantiation
-	protected  CurrentContainer(){}
-	
-	public static CurrentContainer getInstance(){
-		if(instance ==  null){
+	protected CurrentContainer() {
+	}
+
+	public static CurrentContainer getInstance() {
+		if (instance == null) {
 			instance = new CurrentContainer();
 		}
-		
+
 		return instance;
 	}
 
@@ -84,6 +90,53 @@ public class CurrentContainer {
 		this.progress = progress;
 	}
 
-	
+	public int getUid() {
+		return uid;
+	}
+
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+
+	public int getCid() {
+		return cid;
+	}
+
+	public void setCid(int cid) {
+		this.cid = cid;
+	}
+
+	public String getOwner_name() {
+		return owner_name;
+	}
+
+	public void setOwner_name(String owner_name) {
+		this.owner_name = owner_name;
+	}
+
+	public String getOwner_email() {
+		return owner_email;
+	}
+
+	public void setOwner_email(String owner_email) {
+		this.owner_email = owner_email;
+	}
+
+	public String getOwner_tell() {
+		return owner_tell;
+	}
+
+	public void setOwner_tell(String owner_tell) {
+		this.owner_tell = owner_tell;
+	}
+
+	public String getOwner_current_city() {
+		return owner_current_city;
+	}
+
+	public void setOwner_current_city(String owner_current_city) {
+		this.owner_current_city = owner_current_city;
+	}
+
 	
 }

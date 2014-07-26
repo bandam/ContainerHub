@@ -40,6 +40,12 @@ public class ContainerList_Activity extends Activity {
 	private static final String TAG_STATUS = "status";
 	private static final String TAG_DEPARTUREDATE = "departureDate";
 	private static final String TAG_ARRIVALDATE = "arrivalDate";
+	private static final String TAG_CONTAINERID = "containerID";
+	private static final String TAG_UID = "uid";
+	private static final String TAG_OWNERNAME = "name";
+	private static final String TAG_OWNEREMAIL = "email";
+	private static final String TAG_OWNERCURCITY = "curcity";
+	private static final String TAG_OWNERTELL = "tell";
 	private static final String TAG_LOAD_CONTAINER_URL = "http://woltonguesthouse.com/php/ch/get_containers.php";
 
 	private JSONParser jsonParser = new JSONParser();
@@ -120,7 +126,13 @@ public class ContainerList_Activity extends Activity {
 									container.getString(TAG_DEPARTUREDATE),
 									container.getString(TAG_ARRIVALDATE),
 									container.getString(TAG_DESTINATION),
-									thumb_d, container.getInt(TAG_STATUS));
+									thumb_d, container.getInt(TAG_STATUS),
+									container.getInt(TAG_UID),
+									container.getInt(TAG_CONTAINERID),
+									container.getString(TAG_OWNERNAME),
+									container.getString(TAG_OWNEREMAIL),
+									container.getString(TAG_OWNERCURCITY),
+									container.getString(TAG_OWNERTELL));
 							containerList.add(item);
 						} catch (Exception e) {
 							Log.e("image load from URL", e.toString());
@@ -203,6 +215,12 @@ public class ContainerList_Activity extends Activity {
 			currentContainer.setDestination(selectedContainer.getDestination());
 			currentContainer.setIcon(selectedContainer.getIcon());
 			currentContainer.setProgress(selectedContainer.getProgess());
+			currentContainer.setCid(selectedContainer.getCid());
+			currentContainer.setUid(selectedContainer.getUid());
+			currentContainer.setOwner_name(selectedContainer.getOwner_name());
+			currentContainer.setOwner_email(selectedContainer.getOwner_email());
+			currentContainer.setOwner_current_city(selectedContainer.getOwner_current_city());
+			currentContainer.setOwner_tell(selectedContainer.getOwner_tell());
 
 		}
 		
