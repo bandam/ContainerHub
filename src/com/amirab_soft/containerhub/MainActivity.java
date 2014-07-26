@@ -58,8 +58,8 @@ public class MainActivity extends Activity {
 		rowItems = new ArrayList<MenuRowItem>();
 
 		for (int i = 0; i < menuTitles.length; i++) {
-			MenuRowItem item = new MenuRowItem(menuTitles[i], menuIcons.getResourceId(
-					i, -1));
+			MenuRowItem item = new MenuRowItem(menuTitles[i],
+					menuIcons.getResourceId(i, -1));
 			rowItems.add(item);
 		}
 
@@ -108,15 +108,19 @@ public class MainActivity extends Activity {
 		}
 	}
 
-	
 	@SuppressLint("NewApi")
 	private void updateDisplay(int position) {
 		Fragment fragment = null;
-		Intent startPostContainer = new Intent(getBaseContext(), PostContainer_Activity.class);
+		Intent startPostContainer = new Intent(getBaseContext(),
+				PostContainer_Activity.class);
+		Intent listContainer = new Intent(getBaseContext(),
+				ContainerList_Activity.class);
+
+		fragment = new Main_Menu_Fragement();
 
 		switch (position) {
 		case 0:
-			fragment = new ContainerList_Fragment();
+			startActivity(listContainer);
 			break;
 		case 1:
 			startActivity(startPostContainer);
@@ -132,22 +136,25 @@ public class MainActivity extends Activity {
 
 		if (fragment != null) {
 			FragmentManager fragmentManager = getFragmentManager();
-			FragmentTransaction transaction = fragmentManager.beginTransaction();
-			
+			FragmentTransaction transaction = fragmentManager
+					.beginTransaction();
+
 			transaction.replace(R.id.frame_container, fragment);
-			transaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
+			transaction
+					.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_CLOSE);
 			transaction.commit();
 
 			// update selected item and title, then close the drawer
 			setTitle(menuTitles[position]);
 			mDrawerLayout.closeDrawer(mDrawerList);
-		} else {
+		} else 
+		{
 			// error in creating fragment
 			Log.e("MainActivity", "Error in creating fragment");
 		}
+
 	}
 
-	
 	@SuppressLint("NewApi")
 	@Override
 	public void setTitle(CharSequence title) {
@@ -163,7 +170,8 @@ public class MainActivity extends Activity {
 
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-		// toggle navigation drawer on selecting action bar application icon/title
+		// toggle navigation drawer on selecting action bar application
+		// icon/title
 		if (mDrawerToggle.onOptionsItemSelected(item)) {
 			return true;
 		}

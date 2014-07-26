@@ -40,6 +40,14 @@
             android:name="com.amirab_soft.containerhub.PostContainer_Activity"
             android:label="@string/title_postContainer_Activity" >
         </activity>
+        <activity
+            android:name="com.amirab_soft.containerhub.ContainerList_Activity"
+            android:label="@string/title_containerList_Activity">
+        </activity>
+        
+        <activity 
+            android:name="com.amirab_soft.containerhub.ContainerInfo_Main"
+            ></activity>
     </application>
 
 </manifest>

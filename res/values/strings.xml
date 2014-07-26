@@ -12,7 +12,7 @@
     <!-- List Container Fragment Strings -->
     <string name="container_item_title_location">LOCATION:</string>
     <string name="container_item_title_departureDate">DEPARTURE DATE:</string>
-    <string name="container_item_title_to">TO:</string>
+    <string name="container_item_title_to">DESTINATION:</string>
 
     <!-- Post Container Fragment Strings -->
     <string name="post_container_lable_containerDetails">Container Details</string>
@@ -51,6 +51,7 @@
     
     <!-- Container List Activity -->
     <string name="title_containerList_Activity">Container List</string>
+    <string name="loading_container_progress">Loading Containers</string>
 
     
     <!-- Main Activity String -->
@@ -59,6 +60,17 @@
         <item>Post Container</item>
         <item>I\'m Looking For</item>
     </string-array>
+    
+    <!-- Container Info Fragment Strings -->
+    <string name = "containerInfoFragment_pallet_image_description">pallet image</string>
+    <string name = "containerInfoFragment_cartton_Image_desription">carton image</string>
+    <string name = "containerInfoFragment_button_call_text">Call</string>
+    <string name = "containerInfoFragment_button_email_text">Email</string>
+    <string name = "containerInfoFragment_heading_palletPrice">PALLET PRICE:</string>
+    <string name = "containerInfoFragment_heading_palletsAvailable">No. AVAILABLE:</string>
+    <string name = "containerInfoFragment_heading_cartonPrice">CARTON PRICE:</string>
+    <string name = "containerInfofragment_heading_cartonsAvailable">No. AVAILABLE:</string>
+    <string name = "containerInfoFragment_arrivalDate">ARRIVAL DATE:</string>
 
     
     <!-- Icon Resources -->

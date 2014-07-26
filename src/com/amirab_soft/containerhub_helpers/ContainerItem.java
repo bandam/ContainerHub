@@ -1,17 +1,19 @@
 package com.amirab_soft.containerhub_helpers;
 
+import android.graphics.drawable.Drawable;
+
 public class ContainerItem {
 	private String title;
 	private String location;
 	private String departure_date;
 	private String arrival_date;
 	private String destination;
-	private int icon;
+	private Drawable icon;
 	private int progress;
 	
 	
 	public ContainerItem(String title, String description, String departure_date, String arrival_date,
-			String destination,int icon, int progress){
+			String destination,Drawable icon, int progress){
 		this.title = title;
 		this.location = description;
 		this.departure_date = departure_date;
@@ -71,11 +73,11 @@ public class ContainerItem {
 		this.location = description;
 	}
 
-	public int getIcon() {
+	public Drawable getIcon() {
 		return icon;
 	}
 
-	public void setIcon(int icon) {
+	public void setIcon(Drawable icon) {
 		this.icon = icon;
 	}
 }

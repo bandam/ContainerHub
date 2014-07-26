@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen 
+        name="containerInfo_subheading_textsize">8sp</dimen>
+    <dimen 
+        name="containerInfo_majorHeadings_textsize">10sp</dimen>
+    <dimen
+        name="containerInfo_container_details_textsize">7sp</dimen>
+    
+</resources>
