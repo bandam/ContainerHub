@@ -126,7 +126,7 @@ public class MainActivity extends Activity {
 			startActivity(startPostContainer);
 			break;
 		case 2:
-			fragment = new GM_Fragment();
+			fragment = new Main_Menu_Fragement();
 			break;
 
 		default:

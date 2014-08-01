@@ -33,6 +33,7 @@ public class ContainerItem {
 		this.owner_email = owner_email;
 		this.owner_current_city = owner_current_city;
 		this.owner_tell = owner_tell;
+		this.arrival_date = arrival_date;
 	}
 
 	public int getUid() {

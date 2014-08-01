@@ -10,7 +10,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="dp"
         android:background="@color/container_list_background_color"
         android:orientation="vertical"
         android:padding="5dp" >
@@ -84,10 +83,7 @@
                         android:textSize="@dimen/containerInfo_container_details_textsize" />
                 </TableRow>
 
-                <TableRow
-                    android:id="@+id/tableRow1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" >
+                <TableRow>
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -103,14 +99,37 @@
                         android:textColor="@color/container_item_text_color"
                         android:textSize="@dimen/containerInfo_container_details_textsize" />
                 </TableRow>
-            </TableLayout>
 
+                <TableRow
+                    android:id="@+id/tableRow1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/containerInfoFragment_progress"
+                        android:textSize="@dimen/containerInfo_majorHeadings_textsize" />
+                    
+                    
+
+                    <ProgressBar
+                        android:id="@+id/containerDetails_progressbar"
+                        style="@android:style/Widget.ProgressBar.Horizontal"
+                        android:progressDrawable="@drawable/progress_bar_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:minWidth="30dp" />
+
+                </TableRow>
+            </TableLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="20dp" >
+            android:paddingTop="30dp" >
 
             <LinearLayout
                 android:layout_width="wrap_content"
@@ -120,8 +139,11 @@
                     android:id="@+id/imageView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
                     android:contentDescription="@string/containerInfoFragment_cartton_Image_desription"
-                    android:src="@drawable/ic_action_paste" />
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:src="@drawable/palet" />
 
                 <TableLayout
                     android:layout_width="wrap_content"
@@ -175,8 +197,11 @@
                     android:id="@+id/imageView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:adjustViewBounds="true"
                     android:contentDescription="@string/containerInfoFragment_cartton_Image_desription"
-                    android:src="@drawable/ic_action_search" />
+                    android:maxHeight="30dp"
+                    android:maxWidth="30dp"
+                    android:src="@drawable/box" />
 
                 <TableLayout
                     android:layout_width="wrap_content"
@@ -221,7 +246,6 @@
                 </TableLayout>
             </LinearLayout>
         </LinearLayout>
-
     </LinearLayout>
 
     <TextView
@@ -259,7 +283,8 @@
                 android:id="@+id/containerDetails_ownerName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10" />
+                android:ems="10"
+                android:textSize="@dimen/containerInfo_majorHeadings_textsize" />
         </TableRow>
 
         <!-- Owner Phone -->
@@ -280,17 +305,17 @@
                 android:id="@+id/containerDetails_ownerPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10" />
+                android:ems="10"
+                android:textSize="@dimen/containerInfo_majorHeadings_textsize" />
 
             <Button
-                android:id="@+id/mainMenu_searchContainer"
+                android:id="@+id/containerDetails_callOwner"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="32dp"
                 android:text="@string/containerInfoFragment_button_call_text"
                 android:textSize="@dimen/containerInfo_majorHeadings_textsize" />
-
         </TableRow>
 
         <!-- Owner Email -->
@@ -311,17 +336,17 @@
                 android:id="@+id/containerDetails_ownerEmail"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:ems="10" />
+                android:ems="10"
+                android:textSize="@dimen/containerInfo_majorHeadings_textsize" />
 
             <Button
-                android:id="@+id/mainMenu_postContainer"
+                android:id="@+id/containerDetails_emailOwner"
                 style="?android:attr/buttonStyleSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:minHeight="32dp"
                 android:text="@string/containerInfoFragment_button_email_text"
                 android:textSize="@dimen/containerInfo_majorHeadings_textsize" />
-
         </TableRow>
     </TableLayout>
 

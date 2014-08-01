@@ -3,119 +3,242 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_marginLeft="20dp"
-    android:orientation="horizontal"
-    android:padding="20dp"
-    >
-
-    <!-- Icon and status bar -->
+    android:orientation="vertical"
+    android:padding="20dp" >
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical" >
+        android:layout_height="match_parent"
+        android:orientation="horizontal" >
+
+        <!-- Icon and status bar -->
 
         <ImageView
-            android:id="@+id/icon"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginLeft="12dp"
-            android:layout_marginRight="12dp"
-            android:contentDescription="@string/imgdesc" />
-
-        <ProgressBar
-            android:id="@+id/container_progressbar"
-            style="@android:style/Widget.ProgressBar.Horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="5dp" />
-    </LinearLayout>
-
-    <!-- Container Information -->
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp"
-        android:orientation="vertical" >
-
-        <!-- Title -->
-
-        <TextView
-            android:id="@+id/title"
+            android:id="@+id/ImageView01"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:gravity="center_vertical"
-            android:textStyle="bold"
-            android:textColor="@color/container_item_text_color"
-            android:textSize="10sp" />
+            android:layout_height="58dp"
+            android:paddingRight="10dp"
+            android:src="@drawable/horizontalbar" />
 
-        <!-- Container description -->
-
-        <TableLayout
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            >
+            android:orientation="vertical" >
 
-            <!-- Location row -->
+            <ImageView
+                android:id="@+id/icon"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:contentDescription="@string/imgdesc" />
 
-            <TableRow
+            <ProgressBar
+                android:id="@+id/container_progressbar"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:progressDrawable="@drawable/progress_bar_color" />
+        </LinearLayout>
+
+        <!-- Container Information -->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:textColor="@color/container_item_text_color"
+                android:textSize="10sp"
+                android:textStyle="bold" />
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" >
+
+                <TableRow
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/container_item_title_location"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:id="@+id/containerDetails_containerLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/container_item_text_color"
+                        android:textSize="7sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="10dp"
+                        android:text="@string/container_item_title_departureDate"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:id="@+id/containerDetails_departureDate"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/container_item_text_color"
+                        android:textSize="7sp" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:text="@string/container_item_title_to"
+                        android:textSize="9sp" />
+
+                    <TextView
+                        android:id="@+id/containerDetails_toDestination"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/container_item_text_color"
+                        android:textSize="7sp" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/list_item_details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="15dp"
+        android:paddingTop="5dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <ImageView
+                android:id="@+id/imageView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                >
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/containerInfoFragment_cartton_Image_desription"
+                android:maxHeight="30dp"
+                android:maxWidth="30dp"
+                android:src="@drawable/palet" />
 
-                <TextView
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp" >
+
+                <TableRow
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/container_item_title_location"
-                    android:textSize="9sp" 
-                    />
+                    android:layout_height="wrap_content" >
 
-                <TextView
-                    android:id="@+id/containerDetails_containerLocation"
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/containerInfoFragment_heading_palletPrice"
+                        android:textSize="@dimen/containerInfo_subheading_textsize" />
+
+                    <TextView
+                        android:id="@+id/TextView05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/container_item_text_color"
+                        android:textSize="@dimen/containerInfo_container_details_textsize" />
+                </TableRow>
+
+                <TableRow>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:text="@string/containerInfoFragment_heading_palletsAvailable"
+                        android:textSize="@dimen/containerInfo_subheading_textsize" />
+
+                    <TextView
+                        android:id="@+id/TextView06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/container_item_text_color"
+                        android:textSize="@dimen/containerInfo_container_details_textsize" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft="20dp" >
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:contentDescription="@string/containerInfoFragment_cartton_Image_desription"
+                android:maxHeight="30dp"
+                android:maxWidth="30dp"
+                android:src="@drawable/box" />
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft="3dp" >
+
+                <TableRow
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/container_item_text_color"
-                    android:textSize="7sp" />
-            </TableRow>
+                    android:layout_height="wrap_content" >
 
-            <!-- Departure date row -->
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/containerInfoFragment_heading_cartonPrice"
+                        android:textSize="@dimen/containerInfo_subheading_textsize" />
 
-            <TableRow>
+                    <TextView
+                        android:id="@+id/TextView02"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/container_item_text_color"
+                        android:textSize="@dimen/containerInfo_container_details_textsize" />
+                </TableRow>
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="10dp"
-                    android:text="@string/container_item_title_departureDate"
-                    android:textSize="9sp" />
+                <TableRow>
 
-                <TextView
-                    android:id="@+id/containerDetails_departureDate"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/container_item_text_color"
-                    android:textSize="7sp" />
-            </TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="2dp"
+                        android:text="@string/containerInfofragment_heading_cartonsAvailable"
+                        android:textSize="@dimen/containerInfo_subheading_textsize" />
 
-            <!-- ToCity row -->
-
-            <TableRow>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="2dp"
-                    android:text="@string/container_item_title_to"
-                    android:textSize="9sp" />
-
-                <TextView
-                    android:id="@+id/containerDetails_toDestination"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical"
-                    android:textColor="@color/container_item_text_color"
-                    android:textSize="7sp" />
-            </TableRow>
-        </TableLayout>
+                    <TextView
+                        android:id="@+id/TextView03"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:textColor="@color/container_item_text_color"
+                        android:textSize="@dimen/containerInfo_container_details_textsize" />
+                </TableRow>
+            </TableLayout>
+        </LinearLayout>
     </LinearLayout>
 
 </LinearLayout>

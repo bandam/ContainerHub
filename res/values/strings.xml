@@ -66,11 +66,12 @@
     <string name = "containerInfoFragment_cartton_Image_desription">carton image</string>
     <string name = "containerInfoFragment_button_call_text">Call</string>
     <string name = "containerInfoFragment_button_email_text">Email</string>
-    <string name = "containerInfoFragment_heading_palletPrice">PALLET PRICE:</string>
+    <string name = "containerInfoFragment_heading_palletPrice">PALLET  PRICE:</string>
     <string name = "containerInfoFragment_heading_palletsAvailable">No. AVAILABLE:</string>
     <string name = "containerInfoFragment_heading_cartonPrice">CARTON PRICE:</string>
     <string name = "containerInfofragment_heading_cartonsAvailable">No. AVAILABLE:</string>
     <string name = "containerInfoFragment_arrivalDate">ARRIVAL DATE:</string>
+    <string name = "containerInfoFragment_progress">PROGRESS:</string>
 
     
     <!-- Icon Resources -->

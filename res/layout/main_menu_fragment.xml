@@ -15,7 +15,7 @@
             android:paddingLeft="20dp" >
 
             <Button
-                android:id="@+id/mainMenu_postContainer"
+                android:id="@+id/containerDetails_emailOwner"
                 style="@style/btnStyleBeige"
                 android:layout_width="100dp"
                 android:layout_height="90dp"
@@ -32,7 +32,7 @@
             android:paddingLeft="30dp" >
 
             <Button
-                android:id="@+id/mainMenu_searchContainer"
+                android:id="@+id/containerDetails_callOwner"
                 style="@style/btnStyleBeige"
                 android:layout_width="100dp"
                 android:layout_height="90dp"

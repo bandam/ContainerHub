@@ -13,8 +13,8 @@ public class Main_Menu_Fragement extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		View rootView = inflater.inflate(R.layout.main_menu_fragment, container, false);
 		
-		Button postContainerButton = (Button)rootView.findViewById(R.id.mainMenu_postContainer);
-		Button searchForContianerButton = (Button)rootView.findViewById(R.id.mainMenu_searchContainer);
+		Button postContainerButton = (Button)rootView.findViewById(R.id.containerDetails_emailOwner);
+		Button searchForContianerButton = (Button)rootView.findViewById(R.id.containerDetails_callOwner);
 		
 		postContainerButton.setOnClickListener(new Button.OnClickListener(){
 
