@@ -59,6 +59,7 @@
         <item>Search</item>
         <item>Post Container</item>
         <item>I\'m Looking For</item>
+        <item>ContainerHub</item>
     </string-array>
     
     <!-- Container Info Fragment Strings -->

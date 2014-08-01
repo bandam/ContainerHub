@@ -45,6 +45,10 @@ public class LoginActivity extends Activity {
 	private static final String USER_TAG = "user";
 	private static final String EMAIL_TAG = "email";
 	private static final String PASSWORD_TAG = "password";
+	private static final String CURRENTCITY_TAG = "curcity";
+	private static final String USERNAME_TAG = "username";
+	private static final String USERID_TAG = "uid";
+	private static final String PHONE_TAG = "tell";
 	
 
 
@@ -244,6 +248,14 @@ public class LoginActivity extends Activity {
 					user = userobject.getJSONObject(0);
 					
 					if(user.getString(EMAIL_TAG).equals(mEmail) && user.getString(PASSWORD_TAG).equals(mPassword)){
+						
+						CurrentUser currentUser = CurrentUser.getInstance();
+						currentUser.setUsername(user.getString(USERNAME_TAG));
+						currentUser.setEmail(user.getString(EMAIL_TAG));
+						currentUser.setCurrentCity(user.getString(CURRENTCITY_TAG));
+						currentUser.setPhone(user.getString(PHONE_TAG));
+						currentUser.setUid(user.getInt(USERID_TAG));
+						
 						return true;
 					}
 					else{

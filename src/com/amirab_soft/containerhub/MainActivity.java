@@ -96,7 +96,7 @@ public class MainActivity extends Activity {
 
 		if (savedInstanceState == null) {
 			// on first time display view for first navigation item
-			updateDisplay(0);
+			updateDisplay(2);
 		}
 	}
 
@@ -145,13 +145,13 @@ public class MainActivity extends Activity {
 			transaction.commit();
 
 			// update selected item and title, then close the drawer
-			setTitle(menuTitles[position]);
+			setTitle(menuTitles[3]);
 			mDrawerLayout.closeDrawer(mDrawerList);
-		} else 
+		}/* else 
 		{
 			// error in creating fragment
 			Log.e("MainActivity", "Error in creating fragment");
-		}
+		}*/
 
 	}
 

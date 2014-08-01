@@ -21,10 +21,11 @@
             android:textStyle="bold" />
 
         <TableLayout
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="20dp"
-            android:stretchColumns="1,1" >
+            android:shrinkColumns="1"
+            android:stretchColumns="1" >
 
             <!-- Container Location -->
 
@@ -92,6 +93,17 @@
 
             <!-- Container Departure Date -->
 
+
+            <!-- Contianer Arrival Date -->
+        </TableLayout>
+
+        <!-- Selected Container Icon Image -->
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:stretchColumns="1" >
+
             <TableRow
                 android:id="@+id/tableRow3"
                 android:layout_width="wrap_content"
@@ -107,12 +119,13 @@
                     android:id="@+id/post_contn_form_containerDepartureDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:clickable="false"
+                    android:cursorVisible="false"
                     android:ems="10"
-                    android:hint="@string/post_container_textHint_dateFormat"
-                    android:inputType="date" />
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:hint="@string/post_container_textHint_dateFormat" />
             </TableRow>
-
-            <!-- Contianer Arrival Date -->
 
             <TableRow
                 android:id="@+id/tableRow4"
@@ -129,13 +142,15 @@
                     android:id="@+id/post_contn_form_containerArrivalDate"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:ems="10"
+                    android:clickable="false"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
+                    android:gravity="center_vertical|left"
                     android:hint="@string/post_container_textHint_dateFormat"
                     android:inputType="date" />
             </TableRow>
         </TableLayout>
-
-        <!-- Selected Container Icon Image -->
 
         <ImageView
             android:id="@+id/post_container_containerImage"
@@ -186,7 +201,7 @@
             android:layout_marginBottom="20dp"
             android:background="@color/main_menu_color"
             android:padding="5dp"
-            android:stretchColumns="0, 1" >
+            android:stretchColumns="1" >
 
             <!-- Owner Name -->
 
@@ -206,7 +221,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textPersonName" >
+                    android:inputType="textPersonName"
+                    android:textSize="@dimen/containerInfo_majorHeadings_textsize" >
 
                     <requestFocus />
                 </EditText>
@@ -230,7 +246,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="phone" />
+                    android:inputType="phone"
+                    android:textSize="@dimen/containerInfo_majorHeadings_textsize" />
+
             </TableRow>
 
             <!-- Owner Email -->
@@ -251,7 +269,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="textEmailAddress" />
+                    android:inputType="textEmailAddress"
+                    android:textSize="@dimen/containerInfo_majorHeadings_textsize" />
+
             </TableRow>
         </TableLayout>
 
