@@ -1,7 +1,9 @@
-<merge xmlns:android="http://schemas.android.com/apk/res/android"
+<merge 
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.amirab_soft.containerhub.LoginActivity" 
-    android:background="@color/main_menu_divider_color">
+    tools:context="com.amirab_soft.containerhub.MainActivity" 
+    android:background="@color/main_menu_divider_color"
+    android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/load_status"
@@ -29,6 +31,61 @@
             android:textAppearance="?android:attr/textAppearanceMedium" />
     </LinearLayout>
 
+    <RelativeLayout
+        android:id="@+id/container_list_searchView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp" >
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/containerList_search_ToCountry"
+            android:layout_alignRight="@+id/textView1"
+            android:text="To:"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <EditText
+            android:id="@+id/containerList_search_FromCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toRightOf="@+id/textView1"
+            android:layout_weight="1"
+            android:ems="10" />
+
+        <EditText
+            android:id="@+id/containerList_search_ToCountry"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/containerList_search_FromCountry"
+            android:layout_below="@+id/containerList_search_FromCountry"
+            android:layout_weight="1"
+            android:ems="10" />
+
+        <Button
+            android:id="@+id/container_list_searchBtn"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/containerList_search_ToCountry"
+            android:layout_below="@+id/containerList_search_ToCountry"
+            android:layout_marginTop="14dp"
+            android:text="Search" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/containerList_search_FromCountry"
+            android:layout_alignParentLeft="true"
+            android:text="From:"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    </RelativeLayout>
+
     <ListView
         android:id="@+id/container_list_layout"
         android:layout_width="320dp"
@@ -37,6 +94,7 @@
         android:layout_marginTop="20dp"
         android:background="@color/main_menu_divider_color"
         android:divider="@color/container_list_divider_color"
-        android:dividerHeight="15dp" />
+        android:dividerHeight="15dp"
+        android:visibility="gone" />
 
 </merge>

@@ -32,6 +32,10 @@ public class ContainerInfo extends Fragment {
 				.findViewById(R.id.containerDetails_containerImage);
 		TextView arrivalDate = (TextView) containerDetails
 				.findViewById(R.id.containerDetails_arrivalDate);
+		TextView palletPrice = (TextView)containerDetails.findViewById(R.id.containerDetails_palletPrice);
+		TextView cartonPrice = (TextView)containerDetails.findViewById(R.id.containerDetails_cartonPrice);
+		TextView noPalletsAvailable = (TextView)containerDetails.findViewById(R.id.containerDetails_noPalletAvailable);
+		TextView noCartonsAvailable = (TextView)containerDetails.findViewById(R.id.containerDetails_noCartonsAvailable);
 		TextView ownerName = (TextView) containerDetails
 				.findViewById(R.id.containerDetails_ownerName);
 		TextView ownerPhone = (TextView) containerDetails
@@ -56,6 +60,10 @@ public class ContainerInfo extends Fragment {
 		ownerPhone.setText(currentContainer.getOwner_tell());
 		ownerEmail.setText(currentContainer.getOwner_email());
 		containerProgress.setProgress(currentContainer.getProgress());
+		palletPrice.setText(Integer.toString(currentContainer.getPalletPrice()));
+		cartonPrice.setText(Integer.toString(currentContainer.getCartonPrice()));
+		noPalletsAvailable.setText(Integer.toString(currentContainer.getNoPalletsAvailable()));
+		noCartonsAvailable.setText(Integer.toString(currentContainer.getNoCartonsAvailable()));
 
 		// Set owner phone and email variables to access from call function
 		ownerPhoneClass = currentContainer.getOwner_tell();

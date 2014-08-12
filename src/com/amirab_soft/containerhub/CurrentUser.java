@@ -7,6 +7,7 @@ public class CurrentUser {
 
 	// User variables to track
 	private String username;
+	private String name;
 	private String email;
 	private String Phone;
 	private String currentCity;
@@ -30,6 +31,14 @@ public class CurrentUser {
 		}
 
 		return currentUser;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	// Setters and getters for the variables

@@ -7,6 +7,8 @@ import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -19,6 +21,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -29,14 +32,20 @@ import com.amirab_soft.containerhub_helpers.ContainerItem;
 import com.amirab_soft.containerhub_helpers.ContainerItemCustomAdapter;
 
 import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ListView;
 
 public class ContainerList_Activity extends Activity {
+	
+	// Tags for container details
 	private static final String TAG_SUCCESS = "success";
 	private static final String TAG_CONTAINER = "containers";
 	private static final String TAG_IMAGEDIRECTORY = "imageDirectory";
-	private static final String TAG_LOCATION = "location";
-	private static final String TAG_DESTINATION = "destination";
+	private static final String TAG_LOCATION_CITY = "location_city";
+	private static final String TAG_LOCATION_COUNTRY = "location_country";
+	private static final String TAG_DESTINATION_CITY = "destination_city";
+	private static final String TAG_DESTINATION_COUNTRY = "destination_country";
 	private static final String TAG_STATUS = "status";
 	private static final String TAG_DEPARTUREDATE = "departureDate";
 	private static final String TAG_ARRIVALDATE = "arrivalDate";
@@ -46,17 +55,28 @@ public class ContainerList_Activity extends Activity {
 	private static final String TAG_OWNEREMAIL = "email";
 	private static final String TAG_OWNERCURCITY = "curcity";
 	private static final String TAG_OWNERTELL = "tell";
+	private static final String TAG_PALLETPRICE = "palletPrice";
+	private static final String TAG_CARTONPRICE = "cartonPrice";
+	private static final String TAG_NOPALLETSAVAILABLE = "noPalletsAvailable";
+	private static final String TAG_NOCARTONSAVAILABLE = "noCartonsAvailable";
 	private static final String TAG_LOAD_CONTAINER_URL = "http://woltonguesthouse.com/php/ch/get_containers.php";
 
+	//Asinc Task variables
 	private JSONParser jsonParser = new JSONParser();
 	private LoadContainersTask loadContainerTask = null;
 	private List<ContainerItem> containerList;
 
+	// viw objects
 	private ListView listview;
 	private ContainerItemCustomAdapter adapter;
-
 	private View mLoginFormView;
 	private View mLoginStatusView;
+	private View searchView;
+	private Button searchBtn;
+	
+	// Search parameters
+	private EditText edt_fromCountry;
+	private EditText edt_ToCountry;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -65,9 +85,10 @@ public class ContainerList_Activity extends Activity {
 
 		// View rootView = inflater.inflate(R.layout.container_list_fragment,
 		// container, false);
-		listview = (ListView) findViewById(R.id.container_list_layout);
+		listview = (ListView)findViewById(R.id.container_list_layout);
 		mLoginFormView = listview;
 		mLoginStatusView = findViewById(R.id.load_status);
+		searchView = findViewById(R.id.container_list_searchView);
 
 		containerList = new ArrayList<ContainerItem>();
 
@@ -75,12 +96,23 @@ public class ContainerList_Activity extends Activity {
 		listview.setAdapter(adapter);
 		
 		listview.setOnItemClickListener(new ContainerListItemListener());
+		searchBtn = (Button)findViewById(R.id.container_list_searchBtn);
+		
+		edt_fromCountry = (EditText)findViewById(R.id.containerList_search_FromCountry);
+		edt_ToCountry = (EditText)findViewById(R.id.containerList_search_ToCountry);
+		
+		searchBtn.setOnClickListener(new View.OnClickListener() {
+			@Override
+			public void onClick(View v) {
+				searchView.setVisibility(View.GONE);
+				showProgress(true);
+				loadContainerTask = new LoadContainersTask();
+				loadContainerTask.execute();
 
-		showProgress(true);
-		loadContainerTask = new LoadContainersTask();
-		loadContainerTask.execute();
+				adapter.notifyDataSetChanged();
+			}
+		});
 
-		adapter.notifyDataSetChanged();
 
 	}
 
@@ -90,9 +122,16 @@ public class ContainerList_Activity extends Activity {
 		protected Boolean doInBackground(String... params) {
 			int success;
 			JSONObject container;
+			containerList.clear();
 
 			try {
+				
+				String str_fromCountry = edt_fromCountry.getText().toString();
+				String str_toCountry = edt_ToCountry.getText().toString();
+				
 				List<NameValuePair> param = new ArrayList<NameValuePair>();
+				param.add(new BasicNameValuePair("from", str_fromCountry));
+				param.add(new BasicNameValuePair("to", str_toCountry));
 				JSONObject json = jsonParser.makeHttpRequest(
 						TAG_LOAD_CONTAINER_URL, "GET", param);
 
@@ -122,17 +161,23 @@ public class ContainerList_Activity extends Activity {
 
 							ContainerItem item = new ContainerItem(
 									(TAG_CONTAINER +" "+ i).toUpperCase(),
-									container.getString(TAG_LOCATION),
+									container.getString(TAG_LOCATION_CITY) + ", " + 
+									container.getString(TAG_LOCATION_COUNTRY),
 									container.getString(TAG_DEPARTUREDATE),
 									container.getString(TAG_ARRIVALDATE),
-									container.getString(TAG_DESTINATION),
+									container.getString(TAG_DESTINATION_CITY) + ", "+
+									container.getString(TAG_DESTINATION_COUNTRY),
 									thumb_d, container.getInt(TAG_STATUS),
 									container.getInt(TAG_UID),
 									container.getInt(TAG_CONTAINERID),
 									container.getString(TAG_OWNERNAME),
 									container.getString(TAG_OWNEREMAIL),
 									container.getString(TAG_OWNERCURCITY),
-									container.getString(TAG_OWNERTELL));
+									container.getString(TAG_OWNERTELL),
+									container.getInt(TAG_PALLETPRICE),
+									container.getInt(TAG_CARTONPRICE),
+									container.getInt(TAG_NOPALLETSAVAILABLE),
+									container.getInt(TAG_NOCARTONSAVAILABLE));
 							containerList.add(item);
 						} catch (Exception e) {
 							Log.e("image load from URL", e.toString());
@@ -221,9 +266,29 @@ public class ContainerList_Activity extends Activity {
 			currentContainer.setOwner_email(selectedContainer.getOwner_email());
 			currentContainer.setOwner_current_city(selectedContainer.getOwner_current_city());
 			currentContainer.setOwner_tell(selectedContainer.getOwner_tell());
-
+			currentContainer.setPalletPrice(selectedContainer.getPalletPrice());
+			currentContainer.setCartonPrice(selectedContainer.getCartonPrice());
+			currentContainer.setNoPalletsAvailable(selectedContainer.getNoPalletsAvailable());
+			currentContainer.setNoCartonsAvailable(selectedContainer.getNoCartonsAvailable());
+			
 		}
 		
 	}
 	
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.container_list_search_menu, menu);
+		return true;
+	}
+	public boolean onOptionsItemSelected(MenuItem item) {
+	    // Handle item selection
+	    switch (item.getItemId()) {
+	    case R.id.container_list_menu_searchBtn:
+			searchView.setVisibility(View.VISIBLE);
+			listview.setVisibility(View.GONE);
+	        return true;
+	    default:
+	        return super.onOptionsItemSelected(item);
+	    }
+	}
 }

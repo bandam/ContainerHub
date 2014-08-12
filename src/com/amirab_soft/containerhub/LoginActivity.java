@@ -49,6 +49,8 @@ public class LoginActivity extends Activity {
 	private static final String USERNAME_TAG = "username";
 	private static final String USERID_TAG = "uid";
 	private static final String PHONE_TAG = "tell";
+	private static final String NAME_TAG = "name";
+	
 	
 
 
@@ -123,9 +125,9 @@ public class LoginActivity extends Activity {
 	 * If there are form errors (invalid email, missing fields, etc.), the
 	 * errors are presented and no actual login attempt is made.
 	 */
-	public void attemptLogin() {
+	public boolean attemptLogin() {
 		if (mAuthTask != null) {
-			return;
+			return false;
 		}
 
 		// Reset errors.
@@ -165,6 +167,7 @@ public class LoginActivity extends Activity {
 			// There was an error; don't attempt login and focus the first
 			// form field with an error.
 			focusView.requestFocus();
+			return false;
 		} else {
 			// Show a progress spinner, and kick off a background task to
 			// perform the user login attempt.
@@ -172,8 +175,9 @@ public class LoginActivity extends Activity {
 			showProgress(true);
 			mAuthTask = new UserLoginTask();
 			mAuthTask.execute();
-			
+			return true;
 		}
+		
 	}
 
 	/**
@@ -227,8 +231,6 @@ public class LoginActivity extends Activity {
 			int success;
 			JSONObject user;
 			try {
-				
-				
 				List<NameValuePair> paramss = new ArrayList<NameValuePair>();
 				paramss.add(new BasicNameValuePair("email", mEmail)); // using email for username for now
 				
@@ -255,6 +257,7 @@ public class LoginActivity extends Activity {
 						currentUser.setCurrentCity(user.getString(CURRENTCITY_TAG));
 						currentUser.setPhone(user.getString(PHONE_TAG));
 						currentUser.setUid(user.getInt(USERID_TAG));
+						currentUser.setName(user.getString(NAME_TAG));
 						
 						return true;
 					}

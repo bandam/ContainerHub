@@ -42,6 +42,10 @@ public class ContainerItemCustomAdapter extends BaseAdapter{
 		ProgressBar progressBar = (ProgressBar) convertView.findViewById(R.id.container_progressbar);
 		TextView departureDate_view = (TextView) convertView.findViewById(R.id.containerDetails_departureDate);
 		TextView toDestinationView = (TextView)convertView.findViewById(R.id.containerDetails_toDestination);
+		TextView palletPrice = (TextView)convertView.findViewById(R.id.containerDetails_palletPrice);
+		TextView cartonPrice = (TextView)convertView.findViewById(R.id.containerDetails_cartonPrice);
+		TextView noPalletsAvailable = (TextView)convertView.findViewById(R.id.containerDetails_noPalletAvailable);
+		TextView noCartonsAvailable = (TextView)convertView.findViewById(R.id.containerDetails_noCartonsAvailable);
 		
 		ContainerItem currentItem = containerItems.get(position);
 		
@@ -52,6 +56,10 @@ public class ContainerItemCustomAdapter extends BaseAdapter{
 		progressBar.setProgress(currentItem.getProgess());
 		departureDate_view.setText(currentItem.getDepartureDate());
 		toDestinationView.setText(currentItem.getDestination());
+		palletPrice.setText(Integer.toString(currentItem.getPalletPrice()));
+		cartonPrice.setText(Integer.toString(currentItem.getCartonPrice()));
+		noPalletsAvailable.setText(Integer.toString(currentItem.getNoPalletsAvailable()));
+		noCartonsAvailable.setText(Integer.toString(currentItem.getNoCartonsAvailable()));
 		
 		return convertView;
 	}

@@ -31,9 +31,12 @@
     <string name="post_container_button_lable_upload">Upload</string>
     <string name="post_container_lable_arrvDate">Arrv. Date</string>
     <string name="post_container_textHint_location">City, Country</string>
+    <string name="post_container_lable_palletPrice">Pallet Price:</string>
+    <string name="post_container_lable_cattonPrice">Cartton Price:</string>
+    <string name="post_container_textHint_Price">SEK 100,00</string>
 
     <!-- Login Activity Strings -->
-    <string name="title_activity_login">Sign in</string>
+    <!-- string name="title_activity_login">Sign in</string-->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in_register"><b>Sign in</b> or register</string>

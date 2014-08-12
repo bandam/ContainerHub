@@ -10,6 +10,10 @@ public class ContainerItem {
 	private String departure_date;
 	private String arrival_date;
 	private String destination;
+	private int palletPrice;
+	private int cartonPrice;
+	private int noPalletsAvailable;
+	private int noCartonsAvailable;
 	private Drawable icon;
 	private int progress;
 	private String owner_name;
@@ -20,7 +24,8 @@ public class ContainerItem {
 	public ContainerItem(String title, String description,
 			String departure_date, String arrival_date, String destination,
 			Drawable icon, int progress, int uid, int cid, String owner_name,
-			String owner_email, String owner_current_city, String owner_tell) {
+			String owner_email, String owner_current_city, String owner_tell,
+			int palletPrice, int cartonPrice, int noPalletsAvailable, int noCartonsAvailable) {
 		this.title = title;
 		this.location = description;
 		this.departure_date = departure_date;
@@ -34,6 +39,52 @@ public class ContainerItem {
 		this.owner_current_city = owner_current_city;
 		this.owner_tell = owner_tell;
 		this.arrival_date = arrival_date;
+		this.palletPrice = palletPrice;
+		this.cartonPrice = cartonPrice;
+		this.noPalletsAvailable = noPalletsAvailable;
+		this.noCartonsAvailable = noCartonsAvailable;
+	}
+
+	
+	
+	public int getNoPalletsAvailable() {
+		return noPalletsAvailable;
+	}
+
+
+
+	public void setNoPalletsAvailable(int noPalletsAvailable) {
+		this.noPalletsAvailable = noPalletsAvailable;
+	}
+
+
+
+	public int getNoCartonsAvailable() {
+		return noCartonsAvailable;
+	}
+
+
+
+	public void setNoCartonsAvailable(int noCartonsAvailable) {
+		this.noCartonsAvailable = noCartonsAvailable;
+	}
+
+
+
+	public int getPalletPrice() {
+		return palletPrice;
+	}
+
+	public void setPalletPrice(int palletPrice) {
+		this.palletPrice = palletPrice;
+	}
+
+	public int getCartonPrice() {
+		return cartonPrice;
+	}
+
+	public void setCartonPrice(int cartonPrice) {
+		this.cartonPrice = cartonPrice;
 	}
 
 	public int getUid() {
@@ -139,7 +190,5 @@ public class ContainerItem {
 	public void setOwner_current_city(String owner_current_city) {
 		this.owner_current_city = owner_current_city;
 	}
-	
-	
 
 }

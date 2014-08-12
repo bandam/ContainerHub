@@ -30,7 +30,6 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
-
 //upload new container imports
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -56,11 +55,17 @@ public class PostContainer_Activity extends Activity {
 	Bitmap imageBitmap;
 
 	// Form components
-	EditText container_location;
-	EditText container_destination;
+	EditText container_location_city;
+	EditText container_location_country;
+	EditText container_destination_city;
+	EditText container_destination_country;
 	SeekBar container_currentProgress;
 	EditText container_departureDate;
 	EditText container_arrivalDate;
+	EditText container_palletPrice;
+	EditText container_palletsAvailable;
+	EditText container_cartonPrice;
+	EditText container_cartonsAvailable;
 
 	EditText container_ownerName;
 	EditText container_ownerPhone;
@@ -88,11 +93,19 @@ public class PostContainer_Activity extends Activity {
 		Button btn_uploadContainer = (Button) findViewById(R.id.post_contn_uploadContainer);
 
 		// Initialize form components
-		container_location = (EditText) findViewById(R.id.post_contn_form_containerLocation);
-		container_destination = (EditText) findViewById(R.id.post_contn_form_containerDestionation);
+		container_location_city = (EditText) findViewById(R.id.post_contn_form_containerLocation_city);
+		container_location_country = (EditText)findViewById(R.id.containerList_search_FromCountry);
+		container_destination_city = (EditText) findViewById(R.id.post_contn_form_containerDestination_city);
+		container_destination_country = (EditText)findViewById(R.id.containerList_search_ToCountry);
+		
 		container_currentProgress = (SeekBar) findViewById(R.id.post_contn_form_containerProgress);
 		container_departureDate = (EditText) findViewById(R.id.post_contn_form_containerDepartureDate);
 		container_arrivalDate = (EditText) findViewById(R.id.post_contn_form_containerArrivalDate);
+
+		container_palletPrice = (EditText) findViewById(R.id.post_contn_form_palletPrice);
+		container_palletsAvailable = (EditText) findViewById(R.id.post_contn_form_palletsAvailable);
+		container_cartonPrice = (EditText) findViewById(R.id.post_contn_form_cartonPrice);
+		container_cartonsAvailable = (EditText) findViewById(R.id.post_contn_form_cartonsAvailable);
 
 		container_ownerName = (EditText) findViewById(R.id.containerDetails_ownerName);
 		container_ownerPhone = (EditText) findViewById(R.id.containerDetails_ownerPhone);
@@ -124,8 +137,8 @@ public class PostContainer_Activity extends Activity {
 			}
 		});
 
+		// Show a datepicker when user selects arrival date TextEdit
 		container_arrivalDate.setOnClickListener(new OnClickListener() {
-
 			@Override
 			public void onClick(View v) {
 				// set selected date variable
@@ -137,7 +150,9 @@ public class PostContainer_Activity extends Activity {
 								.get(Calendar.DAY_OF_MONTH)).show();
 			}
 		});
+		
 
+		// Show a datepicker when user selects departure date TextEdit
 		container_departureDate.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -150,8 +165,8 @@ public class PostContainer_Activity extends Activity {
 								.get(Calendar.DAY_OF_MONTH)).show();
 			}
 		});
-		
-		//Set current user as containerOwner
+
+		// Preset current user as containerOwner
 		setOwnerDetails();
 	}
 
@@ -179,7 +194,7 @@ public class PostContainer_Activity extends Activity {
 	};
 
 	private void updateLabel(EditText label) {
-		String myFormat = "MM-dd-yyyy"; // In which you need put here
+		String myFormat = "yyyy-MM-dd";
 		SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
 
 		label.setText(sdf.format(myCalendar.getTime()));
@@ -246,39 +261,67 @@ public class PostContainer_Activity extends Activity {
 		String image_str = Base64.encodeBytes(byte_arr);
 
 		// Get form data
-		String str_contn_location = container_location.getText().toString();
-		String str_contn_destination = container_destination.getText()
+		String str_contn_location_city = container_location_city.getText().toString();
+		String str_contn_location_country = container_location_country.getText().toString();
+		String str_contn_destination_city = container_destination_city.getText()
 				.toString();
+		String str_contn_destination_country = container_destination_country.getText().toString();
+		
 		int int_contn_progress = container_currentProgress.getProgress();
 		String str_contn_departureDate = container_departureDate.getText()
 				.toString();
 		String str_contn_arrivalDate = container_arrivalDate.getText()
 				.toString();
+		String str_contn_palletPrice = container_palletPrice.getText()
+				.toString();
+		String str_contn_palletsAvailable = container_palletsAvailable
+				.getText().toString();
+		String str_contn_cartonPrice = container_cartonPrice.getText()
+				.toString();
+		String str_contn_cartonsAvailable = container_cartonsAvailable
+				.getText().toString();
 
 		String str_contn_ownerName = container_ownerName.getText().toString();
 		String str_contn_ownerPhone = container_ownerPhone.getText().toString();
 		String str_contn_ownerEmail = container_ownerEmail.getText().toString();
 
+		// Get current userid
+		CurrentUser currentUser = CurrentUser.getInstance();
+		String str_contn_ownerUId = Integer.toString(currentUser.getUid());
+
 		// Add data to send over to server
 		nameValuePairs = new ArrayList<NameValuePair>();
 		nameValuePairs.add(new BasicNameValuePair("image", image_str));
-		nameValuePairs.add(new BasicNameValuePair("container_location",
-				str_contn_location));
-		nameValuePairs.add(new BasicNameValuePair("container_destination",
-				str_contn_destination));
+		nameValuePairs.add(new BasicNameValuePair("container_location_city",
+				str_contn_location_city));
+		nameValuePairs.add(new BasicNameValuePair("container_location_country", str_contn_location_country));
+		nameValuePairs.add(new BasicNameValuePair("container_destination_city",
+				str_contn_destination_city));
+		nameValuePairs.add(new BasicNameValuePair("container_destination_country", str_contn_destination_country));
 		nameValuePairs.add(new BasicNameValuePair("container_progress", Integer
 				.toString(int_contn_progress)));
 		nameValuePairs.add(new BasicNameValuePair("container_departureDate",
 				str_contn_departureDate));
 		nameValuePairs.add(new BasicNameValuePair("container_arrivalDate",
 				str_contn_arrivalDate));
+		nameValuePairs.add(new BasicNameValuePair("container_palletPrice",
+				str_contn_palletPrice));
+		nameValuePairs.add(new BasicNameValuePair("container_palletsAvailable",
+				str_contn_palletsAvailable));
+		nameValuePairs.add(new BasicNameValuePair("container_cartonPrice",
+				str_contn_cartonPrice));
+		nameValuePairs.add(new BasicNameValuePair("container_cartonsAvailable",
+				str_contn_cartonsAvailable));
 		nameValuePairs.add(new BasicNameValuePair("container_ownerName",
 				str_contn_ownerName));
 		nameValuePairs.add(new BasicNameValuePair("container_ownerPhone",
 				str_contn_ownerPhone));
 		nameValuePairs.add(new BasicNameValuePair("container_ownerEmail",
 				str_contn_ownerEmail));
+		nameValuePairs.add(new BasicNameValuePair("container_ownerUserId",
+				str_contn_ownerUId));
 
+		// Define a new process to send data over to the server
 		Thread t = new Thread(new Runnable() {
 
 			@Override
@@ -373,10 +416,10 @@ public class PostContainer_Activity extends Activity {
 		}
 		return res;
 	}
-	
-	public void setOwnerDetails(){
+
+	public void setOwnerDetails() {
 		CurrentUser currentUser = CurrentUser.getInstance();
-		container_ownerName.setText(currentUser.getUsername());
+		container_ownerName.setText(currentUser.getName());
 		container_ownerPhone.setText(currentUser.getPhone());
 		container_ownerEmail.setText(currentUser.getEmail());
 	}

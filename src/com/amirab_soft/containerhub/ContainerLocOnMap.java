@@ -11,7 +11,7 @@ import android.webkit.WebViewClient;
 public class ContainerLocOnMap extends Fragment{
 	 WebView myWebView;
 	 //private static final  String mapPath = "https://maps.google.com/?ll=37.0625,-95.677068&spn=29.301969,56.513672&t=h&z=4";
-	 private static final String mapPath = "https://www.google.com/maps/place/Accra,+Ghana/";
+	 
 	 
 		public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 			View containerLocOnMap = inflater.inflate(R.layout.container_loconmap_fragment,container, false);
@@ -19,6 +19,11 @@ public class ContainerLocOnMap extends Fragment{
 			  myWebView.getSettings().setJavaScriptEnabled(true);
 			  myWebView.setWebViewClient(new WebViewClient());
 			  
+			  
+			  CurrentContainer currentContainer = CurrentContainer.getInstance();
+			  
+			  String mapPath = "https://www.google.com/maps/place/" + currentContainer.getLocation();
+			  //String mapPath = "https://www.google.com/maps/dir/"+currentContainer.getLocation()+"/"+currentContainer.getDestination()+"/";
 			  myWebView.loadUrl(mapPath);
 			return containerLocOnMap;
 		}

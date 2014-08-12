@@ -14,6 +14,10 @@ public class CurrentContainer {
 	private String destination;
 	private Drawable icon;
 	private int progress;
+	private int palletPrice;
+	private int cartonPrice;
+	private int noPalletsAvailable;
+	private int noCartonsAvailable;
 	private String owner_name;
 	private String owner_email;
 	private String owner_tell;
@@ -138,5 +142,37 @@ public class CurrentContainer {
 		this.owner_current_city = owner_current_city;
 	}
 
+	public int getPalletPrice() {
+		return palletPrice;
+	}
+
+	public void setPalletPrice(int palletPrice) {
+		this.palletPrice = palletPrice;
+	}
+
+	public int getCartonPrice() {
+		return cartonPrice;
+	}
+
+	public void setCartonPrice(int cartonPrice) {
+		this.cartonPrice = cartonPrice;
+	}
+
+	public int getNoPalletsAvailable() {
+		return noPalletsAvailable;
+	}
+
+	public void setNoPalletsAvailable(int noPalletsAvailable) {
+		this.noPalletsAvailable = noPalletsAvailable;
+	}
+
+	public int getNoCartonsAvailable() {
+		return noCartonsAvailable;
+	}
+
+	public void setNoCartonsAvailable(int noCartonsAvailable) {
+		this.noCartonsAvailable = noCartonsAvailable;
+	}
+	
 	
 }
