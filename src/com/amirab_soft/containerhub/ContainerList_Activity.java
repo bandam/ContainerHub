@@ -27,7 +27,6 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.amirab_soft.containerhub.R;
-import com.amirab_soft.containerhub.MainActivity.SlideitemListener;
 import com.amirab_soft.containerhub_helpers.ContainerItem;
 import com.amirab_soft.containerhub_helpers.ContainerItemCustomAdapter;
 
@@ -72,6 +71,8 @@ public class ContainerList_Activity extends Activity {
 	private View mLoginFormView;
 	private View mLoginStatusView;
 	private View searchView;
+	private View noResultsView;
+	private Button searchAgainBtn;
 	private Button searchBtn;
 	
 	// Search parameters
@@ -89,6 +90,11 @@ public class ContainerList_Activity extends Activity {
 		mLoginFormView = listview;
 		mLoginStatusView = findViewById(R.id.load_status);
 		searchView = findViewById(R.id.container_list_searchView);
+		
+		// No results view variables
+		noResultsView = findViewById(R.id.noResultsView);
+		searchAgainBtn = (Button)findViewById(R.id.searchAgainBtn);
+		
 
 		containerList = new ArrayList<ContainerItem>();
 
@@ -108,13 +114,25 @@ public class ContainerList_Activity extends Activity {
 				showProgress(true);
 				loadContainerTask = new LoadContainersTask();
 				loadContainerTask.execute();
-
-				adapter.notifyDataSetChanged();
+				
+			}
+		});
+		
+		//
+		searchAgainBtn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				noResultsView.setVisibility(View.GONE);
+				searchView.setVisibility(View.VISIBLE);
+				listview.setVisibility(View.GONE);
 			}
 		});
 
 
 	}
+	
+	
 
 	public class LoadContainersTask extends AsyncTask<String, Void, Boolean> {
 
@@ -186,18 +204,23 @@ public class ContainerList_Activity extends Activity {
 					}
 				}
 			} catch (JSONException exp) {
+				
 				Log.d("JSON DecodeContainerlist", exp.toString());
 			}
 			return true;
 		}
 
+		@Override
 		protected void onPostExecute(final Boolean success) {
 			showProgress(false);
-			if (success) {
+			if (!containerList.isEmpty()) {
 				adapter.notifyDataSetChanged();
 			} else {
 				adapter.notifyDataSetChanged();
+				noResultsView.setVisibility(View.VISIBLE);
+				
 			}
+
 		}
 	}
 
@@ -252,7 +275,7 @@ public class ContainerList_Activity extends Activity {
 			
 			//Get selected Container from list and save it to the singleton for use in other activities
 			CurrentContainer currentContainer = CurrentContainer.getInstance();
-			ContainerItem selectedContainer = (ContainerItem)containerList.get(arg2);
+			ContainerItem selectedContainer = containerList.get(arg2);
 			
 			currentContainer.setArrival_date(selectedContainer.getArrivalDate());
 			currentContainer.setDeparture_date(selectedContainer.getDepartureDate());
@@ -280,10 +303,12 @@ public class ContainerList_Activity extends Activity {
 		getMenuInflater().inflate(R.menu.container_list_search_menu, menu);
 		return true;
 	}
+	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
 	    // Handle item selection
 	    switch (item.getItemId()) {
 	    case R.id.container_list_menu_searchBtn:
+	    	noResultsView.setVisibility(View.GONE);
 			searchView.setVisibility(View.VISIBLE);
 			listview.setVisibility(View.GONE);
 	        return true;

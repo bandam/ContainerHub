@@ -49,11 +49,11 @@ public final class R {
         public static final int progress_bar_color=0x7f02000b;
     }
     public static final class id {
-        public static final int ImageView01=0x7f0a002b;
-        public static final int TableRow01=0x7f0a0046;
-        public static final int TableRow02=0x7f0a0041;
-        public static final int TextView01=0x7f0a0047;
-        public static final int action_forgot_password=0x7f0a0051;
+        public static final int ImageView01=0x7f0a002d;
+        public static final int TableRow01=0x7f0a0048;
+        public static final int TableRow02=0x7f0a0043;
+        public static final int TextView01=0x7f0a0049;
+        public static final int action_forgot_password=0x7f0a0053;
         public static final int containerDetails_arrivalDate=0x7f0a000e;
         public static final int containerDetails_callOwner=0x7f0a001e;
         public static final int containerDetails_cartonPrice=0x7f0a0015;
@@ -73,64 +73,66 @@ public final class R {
         public static final int containerList_search_FromCountry=0x7f0a0028;
         public static final int containerList_search_ToCountry=0x7f0a0026;
         public static final int container_list_layout=0x7f0a002a;
-        public static final int container_list_menu_searchBtn=0x7f0a0050;
+        public static final int container_list_menu_searchBtn=0x7f0a0052;
         public static final int container_list_searchBtn=0x7f0a0029;
         public static final int container_list_searchView=0x7f0a0025;
-        public static final int container_progressbar=0x7f0a002d;
+        public static final int container_progressbar=0x7f0a002f;
         public static final int drawer_layout=0x7f0a0007;
         public static final int email=0x7f0a0003;
         public static final int frame_container=0x7f0a0008;
-        public static final int icon=0x7f0a002c;
-        public static final int imageView1=0x7f0a0040;
+        public static final int icon=0x7f0a002e;
+        public static final int imageView1=0x7f0a0042;
         public static final int imageView2=0x7f0a0011;
         public static final int imageView3=0x7f0a0014;
-        public static final int list_item_details=0x7f0a002f;
+        public static final int list_item_details=0x7f0a0031;
         public static final int load_status=0x7f0a0024;
         public static final int login=0x7f0a0005;
         public static final int login_form=0x7f0a0002;
         public static final int login_status=0x7f0a0000;
         public static final int login_status_message=0x7f0a0001;
-        public static final int mapview=0x7f0a0030;
+        public static final int mapview=0x7f0a0032;
+        public static final int noResultsView=0x7f0a002b;
         public static final int password=0x7f0a0004;
-        public static final int post_container_containerImage=0x7f0a004c;
-        public static final int post_contn_capturecameraImg=0x7f0a004d;
-        public static final int post_contn_form_cartonPrice=0x7f0a0048;
-        public static final int post_contn_form_cartonsAvailable=0x7f0a004b;
-        public static final int post_contn_form_containerArrivalDate=0x7f0a003f;
-        public static final int post_contn_form_containerDepartureDate=0x7f0a003c;
-        public static final int post_contn_form_containerDestination_city=0x7f0a0036;
-        public static final int post_contn_form_containerLocation_city=0x7f0a0033;
-        public static final int post_contn_form_containerProgress=0x7f0a0039;
-        public static final int post_contn_form_palletPrice=0x7f0a0042;
-        public static final int post_contn_form_palletsAvailable=0x7f0a0045;
-        public static final int post_contn_selectImg=0x7f0a004e;
-        public static final int post_contn_uploadContainer=0x7f0a004f;
-        public static final int scrollView1=0x7f0a0031;
+        public static final int post_container_containerImage=0x7f0a004e;
+        public static final int post_contn_capturecameraImg=0x7f0a004f;
+        public static final int post_contn_form_cartonPrice=0x7f0a004a;
+        public static final int post_contn_form_cartonsAvailable=0x7f0a004d;
+        public static final int post_contn_form_containerArrivalDate=0x7f0a0041;
+        public static final int post_contn_form_containerDepartureDate=0x7f0a003e;
+        public static final int post_contn_form_containerDestination_city=0x7f0a0038;
+        public static final int post_contn_form_containerLocation_city=0x7f0a0035;
+        public static final int post_contn_form_containerProgress=0x7f0a003b;
+        public static final int post_contn_form_palletPrice=0x7f0a0044;
+        public static final int post_contn_form_palletsAvailable=0x7f0a0047;
+        public static final int post_contn_selectImg=0x7f0a0050;
+        public static final int post_contn_uploadContainer=0x7f0a0051;
+        public static final int scrollView1=0x7f0a0033;
+        public static final int searchAgainBtn=0x7f0a002c;
         public static final int sign_in_button=0x7f0a0006;
         public static final int slider_list=0x7f0a0009;
         public static final int tableRow1=0x7f0a000f;
-        public static final int tableRow10=0x7f0a0049;
-        public static final int tableRow2=0x7f0a0037;
-        public static final int tableRow3=0x7f0a003a;
-        public static final int tableRow4=0x7f0a003d;
+        public static final int tableRow10=0x7f0a004b;
+        public static final int tableRow2=0x7f0a0039;
+        public static final int tableRow3=0x7f0a003c;
+        public static final int tableRow4=0x7f0a003f;
         public static final int tableRow5=0x7f0a0018;
         public static final int tableRow6=0x7f0a001b;
         public static final int tableRow7=0x7f0a001f;
-        public static final int tableRow8=0x7f0a0043;
-        public static final int tableRow9=0x7f0a0034;
+        public static final int tableRow8=0x7f0a0045;
+        public static final int tableRow9=0x7f0a0036;
         public static final int textView1=0x7f0a0027;
-        public static final int textView10=0x7f0a003e;
-        public static final int textView11=0x7f0a0044;
-        public static final int textView12=0x7f0a004a;
+        public static final int textView10=0x7f0a0040;
+        public static final int textView11=0x7f0a0046;
+        public static final int textView12=0x7f0a004c;
         public static final int textView2=0x7f0a0017;
         public static final int textView3=0x7f0a0019;
         public static final int textView4=0x7f0a001c;
         public static final int textView5=0x7f0a0020;
-        public static final int textView6=0x7f0a0032;
-        public static final int textView7=0x7f0a0038;
-        public static final int textView8=0x7f0a003b;
-        public static final int textView9=0x7f0a0035;
-        public static final int title=0x7f0a002e;
+        public static final int textView6=0x7f0a0034;
+        public static final int textView7=0x7f0a003a;
+        public static final int textView8=0x7f0a003d;
+        public static final int textView9=0x7f0a0037;
+        public static final int title=0x7f0a0030;
     }
     public static final class layout {
         public static final int activity_login=0x7f030000;
@@ -150,45 +152,46 @@ public final class R {
         public static final int main=0x7f090002;
     }
     public static final class string {
-        public static final int action_forgot_password=0x7f060021;
+        public static final int action_forgot_password=0x7f060026;
         public static final int action_search=0x7f060006;
         public static final int action_settings=0x7f060001;
-        public static final int action_sign_in_register=0x7f06001f;
-        public static final int action_sign_in_short=0x7f060020;
+        public static final int action_sign_in_register=0x7f060024;
+        public static final int action_sign_in_short=0x7f060025;
         public static final int app_name=0x7f060000;
-        public static final int containerInfoFragment_arrivalDate=0x7f060032;
-        public static final int containerInfoFragment_button_call_text=0x7f06002c;
-        public static final int containerInfoFragment_button_email_text=0x7f06002d;
-        public static final int containerInfoFragment_cartton_Image_desription=0x7f06002b;
-        public static final int containerInfoFragment_heading_cartonPrice=0x7f060030;
-        public static final int containerInfoFragment_heading_palletPrice=0x7f06002e;
-        public static final int containerInfoFragment_heading_palletsAvailable=0x7f06002f;
+        public static final int containerInfoFragment_arrivalDate=0x7f06003c;
+        public static final int containerInfoFragment_button_call_text=0x7f060036;
+        public static final int containerInfoFragment_button_email_text=0x7f060037;
+        public static final int containerInfoFragment_cartton_Image_desription=0x7f060035;
+        public static final int containerInfoFragment_heading_cartonPrice=0x7f06003a;
+        public static final int containerInfoFragment_heading_palletPrice=0x7f060038;
+        public static final int containerInfoFragment_heading_palletsAvailable=0x7f060039;
         /**  Container Info Fragment Strings 
          */
-        public static final int containerInfoFragment_pallet_image_description=0x7f06002a;
-        public static final int containerInfoFragment_progress=0x7f060033;
-        public static final int containerInfofragment_heading_cartonsAvailable=0x7f060031;
+        public static final int containerInfoFragment_pallet_image_description=0x7f060034;
+        public static final int containerInfoFragment_progress=0x7f06003d;
+        public static final int containerInfofragment_heading_cartonsAvailable=0x7f06003b;
         public static final int container_item_title_departureDate=0x7f060008;
         /**  List Container Fragment Strings 
          */
         public static final int container_item_title_location=0x7f060007;
         public static final int container_item_title_to=0x7f060009;
-        public static final int error_field_required=0x7f060026;
-        public static final int error_incorrect_password=0x7f060025;
-        public static final int error_invalid_email=0x7f060023;
-        public static final int error_invalid_password=0x7f060024;
+        public static final int error_field_required=0x7f06002b;
+        public static final int error_incorrect_password=0x7f06002a;
+        public static final int error_invalid_email=0x7f060028;
+        public static final int error_invalid_password=0x7f060029;
         public static final int imgdesc=0x7f060002;
         public static final int imgfb=0x7f060003;
         public static final int imggplus=0x7f060005;
         public static final int imgmaps=0x7f060004;
-        public static final int loading_container_progress=0x7f060029;
-        public static final int login_progress_signing_in=0x7f060022;
+        public static final int loading_container_progress=0x7f06002e;
+        public static final int login_progress_signing_in=0x7f060027;
         public static final int post_container_button_lable_SelectImage=0x7f060012;
         public static final int post_container_button_lable_upload=0x7f060017;
+        public static final int post_container_cartonImage_contentDescription=0x7f060020;
         public static final int post_container_contentDescription_image=0x7f060010;
         public static final int post_container_lable_arrvDate=0x7f060018;
         public static final int post_container_lable_camera=0x7f060011;
-        public static final int post_container_lable_cattonPrice=0x7f06001b;
+        public static final int post_container_lable_cattonPrice=0x7f06001c;
         /**  Post Container Fragment Strings 
          */
         public static final int post_container_lable_containerDetails=0x7f06000a;
@@ -196,25 +199,34 @@ public final class R {
         public static final int post_container_lable_destination=0x7f06000c;
         public static final int post_container_lable_location=0x7f06000b;
         public static final int post_container_lable_nameOfOwner=0x7f060014;
+        public static final int post_container_lable_numberOfCartonsAvailable=0x7f060021;
+        public static final int post_container_lable_numberOfPalletsAvailable=0x7f06001f;
         public static final int post_container_lable_ownerDetails=0x7f060013;
         public static final int post_container_lable_ownerEmail=0x7f060016;
         public static final int post_container_lable_ownerPhone=0x7f060015;
-        public static final int post_container_lable_palletPrice=0x7f06001a;
+        public static final int post_container_lable_palletPrice=0x7f06001b;
         public static final int post_container_lable_status=0x7f06000d;
-        public static final int post_container_textHint_Price=0x7f06001c;
+        public static final int post_container_palletImage_contentDescription=0x7f06001e;
+        public static final int post_container_textHint_Price=0x7f06001d;
         public static final int post_container_textHint_dateFormat=0x7f06000f;
-        public static final int post_container_textHint_location=0x7f060019;
+        public static final int post_container_textHint_location_city=0x7f060019;
+        public static final int post_container_textHint_location_country=0x7f06001a;
         /**  Login Activity Strings 
  string name="title_activity_login">Sign in</string
          */
-        public static final int prompt_email=0x7f06001d;
-        public static final int prompt_password=0x7f06001e;
+        public static final int prompt_email=0x7f060022;
+        public static final int prompt_password=0x7f060023;
+        public static final int promt_containerList_noResults=0x7f060032;
         /**  Container List Activity 
          */
-        public static final int title_containerList_Activity=0x7f060028;
+        public static final int title_containerList_Activity=0x7f06002d;
+        public static final int title_containerList_searchAgainBtn=0x7f060033;
+        public static final int title_containerList_searchBtn=0x7f060031;
+        public static final int title_containerList_searchDestination=0x7f060030;
+        public static final int title_containerList_searchLocation=0x7f06002f;
         /**  Post Container Activity String 
          */
-        public static final int title_postContainer_Activity=0x7f060027;
+        public static final int title_postContainer_Activity=0x7f06002c;
     }
     public static final class style {
         /** 

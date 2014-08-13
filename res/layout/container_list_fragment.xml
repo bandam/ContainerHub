@@ -1,9 +1,8 @@
-<merge 
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<merge xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.amirab_soft.containerhub.MainActivity" 
     android:background="@color/main_menu_divider_color"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    tools:context="com.amirab_soft.containerhub.MainActivity" >
 
     <LinearLayout
         android:id="@+id/load_status"
@@ -11,7 +10,6 @@
         android:layout_height="match_parent"
         android:layout_gravity="center"
         android:gravity="center_horizontal"
-        
         android:orientation="vertical"
         android:visibility="gone" >
 
@@ -35,7 +33,8 @@
         android:id="@+id/container_list_searchView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="10dp" >
+        android:padding="10dp"
+        android:visibility="visible" >
 
         <TextView
             android:id="@+id/textView2"
@@ -43,7 +42,7 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/containerList_search_ToCountry"
             android:layout_alignRight="@+id/textView1"
-            android:text="To:"
+            android:text="@string/title_containerList_searchDestination"
             android:textAppearance="?android:attr/textAppearanceSmall" />
 
         <EditText
@@ -53,8 +52,8 @@
             android:layout_alignParentTop="true"
             android:layout_marginLeft="15dp"
             android:layout_toRightOf="@+id/textView1"
-            android:layout_weight="1"
-            android:ems="10" />
+            android:ems="10"
+            android:inputType="textPostalAddress" />
 
         <EditText
             android:id="@+id/containerList_search_ToCountry"
@@ -62,8 +61,8 @@
             android:layout_height="wrap_content"
             android:layout_alignLeft="@+id/containerList_search_FromCountry"
             android:layout_below="@+id/containerList_search_FromCountry"
-            android:layout_weight="1"
-            android:ems="10" />
+            android:ems="10"
+            android:inputType="textPostalAddress" />
 
         <Button
             android:id="@+id/container_list_searchBtn"
@@ -73,7 +72,7 @@
             android:layout_alignRight="@+id/containerList_search_ToCountry"
             android:layout_below="@+id/containerList_search_ToCountry"
             android:layout_marginTop="14dp"
-            android:text="Search" />
+            android:text="@string/title_containerList_searchBtn" />
 
         <TextView
             android:id="@+id/textView1"
@@ -81,9 +80,8 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/containerList_search_FromCountry"
             android:layout_alignParentLeft="true"
-            android:text="From:"
+            android:text="@string/title_containerList_searchLocation"
             android:textAppearance="?android:attr/textAppearanceSmall" />
-
     </RelativeLayout>
 
     <ListView
@@ -96,5 +94,28 @@
         android:divider="@color/container_list_divider_color"
         android:dividerHeight="15dp"
         android:visibility="gone" />
+
+    <RelativeLayout
+        android:id="@+id/noResultsView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:padding="20dp"
+        android:visibility="gone" >
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/promt_containerList_noResults" />
+
+        <Button
+            android:id="@+id/searchAgainBtn"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:text="@string/title_containerList_searchAgainBtn" />
+    </RelativeLayout>
 
 </merge>
