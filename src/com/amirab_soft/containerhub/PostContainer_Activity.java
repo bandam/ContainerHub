@@ -286,7 +286,7 @@ public class PostContainer_Activity extends Activity {
 
 		// Get current userid
 		CurrentUser currentUser = CurrentUser.getInstance();
-		String str_contn_ownerUId = Integer.toString(currentUser.getUid());
+		String str_contn_ownerUId = currentUser.getUid();
 
 		// Add data to send over to server
 		nameValuePairs = new ArrayList<NameValuePair>();

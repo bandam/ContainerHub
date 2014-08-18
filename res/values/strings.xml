@@ -87,6 +87,9 @@
     <string name = "containerInfofragment_heading_cartonsAvailable">No. AVAILABLE:</string>
     <string name = "containerInfoFragment_arrivalDate">ARRIVAL DATE:</string>
     <string name = "containerInfoFragment_progress">PROGRESS:</string>
+    
+    <!-- Facebook login -->
+    <string name="app_id">268351303366148</string>
 
     
     <!-- Icon Resources -->

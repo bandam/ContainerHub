@@ -256,7 +256,7 @@ public class LoginActivity extends Activity {
 						currentUser.setEmail(user.getString(EMAIL_TAG));
 						currentUser.setCurrentCity(user.getString(CURRENTCITY_TAG));
 						currentUser.setPhone(user.getString(PHONE_TAG));
-						currentUser.setUid(user.getInt(USERID_TAG));
+						currentUser.setUid(user.getString(USERID_TAG));
 						currentUser.setName(user.getString(NAME_TAG));
 						
 						return true;

@@ -11,13 +11,13 @@ public class CurrentUser {
 	private String email;
 	private String Phone;
 	private String currentCity;
-	private int uid;
+	private String uid;
 
-	public int getUid() {
+	public String getUid() {
 		return uid;
 	}
 
-	public void setUid(int uid) {
+	public void setUid(String uid) {
 		this.uid = uid;
 	}
 

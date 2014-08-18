@@ -20,6 +20,7 @@ public class ContainerInfo_Main extends FragmentActivity {
 		TabAdapter = new ContainerDetails_TabPagerAdapter(
 				getSupportFragmentManager());
 		Tab = (ViewPager) findViewById(R.id.containerInfo_pager);
+		
 		Tab.setOnPageChangeListener(new ViewPager.SimpleOnPageChangeListener() {
 			@Override
 			public void onPageSelected(int position) {
@@ -29,6 +30,7 @@ public class ContainerInfo_Main extends FragmentActivity {
 		});
 		Tab.setAdapter(TabAdapter);
 		actionBar = getActionBar();
+		
 
 		// Enable Tabs on Action Bar
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
@@ -50,6 +52,7 @@ public class ContainerInfo_Main extends FragmentActivity {
 				// TODO Auto-generated method stub
 			}
 		};
+		
 		// Add New Tab
 		actionBar.addTab(actionBar.newTab().setText("Container Details")
 				.setTabListener(tabListener));
