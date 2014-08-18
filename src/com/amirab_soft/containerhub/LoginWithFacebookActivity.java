@@ -2,11 +2,10 @@ package com.amirab_soft.containerhub;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.view.Menu;
 
-public class FacebookMain extends FragmentActivity {
+public class LoginWithFacebookActivity extends FragmentActivity {
 	
-	private FacebookFragment mainFragment;
+	private LoginWithFacebookFragment mainFragment;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -15,14 +14,14 @@ public class FacebookMain extends FragmentActivity {
         
         if (savedInstanceState == null) {
         	// Add the fragment on initial activity setup
-        	mainFragment = new FacebookFragment();
+        	mainFragment = new LoginWithFacebookFragment();
             getSupportFragmentManager()
             .beginTransaction()
             .add(android.R.id.content, mainFragment)
             .commit();
         } else {
         	// Or set the fragment from restored state info
-        	mainFragment = (FacebookFragment) getSupportFragmentManager()
+        	mainFragment = (LoginWithFacebookFragment) getSupportFragmentManager()
         	.findFragmentById(android.R.id.content);
         }
     }

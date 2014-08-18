@@ -3,15 +3,11 @@ package com.amirab_soft.containerhub_helpers;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.app.Activity;
 import android.content.Context;
 
 import java.util.List;
 
 import com.amirab_soft.containerhub.R;
-import com.amirab_soft.containerhub.R.id;
-import com.amirab_soft.containerhub.R.layout;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -30,8 +26,8 @@ public class MenuCustomAdapter extends BaseAdapter{
 	public View getView(int position, View convertView, ViewGroup parent){
 		
 		if(convertView == null){
-			LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
-			convertView = mInflater.inflate(R.layout.menu_list_item, null);
+			LayoutInflater mInflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			convertView = mInflater.inflate(R.layout.slidemenu_list_item, null);
 		}
 		
 		ImageView imgIcon = (ImageView) convertView.findViewById(R.id.icon);

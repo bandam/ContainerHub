@@ -24,7 +24,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-public class MainActivity extends Activity {
+public class MainMenuActivity extends Activity {
 	String[] menuTitles;
 	TypedArray menuIcons;
 
@@ -44,7 +44,7 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		// Todo Auto-generated method stud
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.main_menu_activity);
 
 		mTitle = mDrawerTitle = getTitle();
 
@@ -115,7 +115,7 @@ public class MainActivity extends Activity {
 		Intent listContainer = new Intent(getBaseContext(),
 				ContainerList_Activity.class);
 
-		fragment = new Main_Menu_Fragement();
+		fragment = new MainMenuFragement();
 
 		switch (position) {
 		case 0:
@@ -125,7 +125,7 @@ public class MainActivity extends Activity {
 			startActivity(startPostContainer);
 			break;
 		case 2:
-			fragment = new Main_Menu_Fragement();
+			fragment = new MainMenuFragement();
 			break;
 
 		default:

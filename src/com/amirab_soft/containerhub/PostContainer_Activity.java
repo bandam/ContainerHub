@@ -11,6 +11,7 @@ import org.apache.http.NameValuePair;
 
 import com.amirab_soft.containerhub.R;
 import com.amirab_soft.containerhub_helpers.Base64;
+import com.amirab_soft.containerhub_helpers.CurrentUser;
 
 import android.app.Activity;
 import android.app.DatePickerDialog;
@@ -28,6 +29,7 @@ import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+
 
 //upload new container imports
 import java.io.ByteArrayOutputStream;

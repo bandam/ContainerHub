@@ -1,5 +1,7 @@
 package com.amirab_soft.containerhub;
 
+import com.amirab_soft.containerhub_helpers.CurrentContainer;
+
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;

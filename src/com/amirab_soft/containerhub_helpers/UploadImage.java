@@ -18,7 +18,6 @@ import com.amirab_soft.containerhub.R;
 import android.app.Activity;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.widget.Toast;
 
@@ -83,7 +82,7 @@ public class UploadImage extends Activity {
 	@Override
 	public void onCreate(Bundle icicle) {
 		super.onCreate(icicle);
-		setContentView(R.layout.activity_login);
+		setContentView(R.layout.login_with_email);
 
 	}
 

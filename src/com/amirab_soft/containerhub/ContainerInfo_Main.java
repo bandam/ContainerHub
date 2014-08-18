@@ -16,7 +16,7 @@ public class ContainerInfo_Main extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.container_info_pager);
+		setContentView(R.layout.container_info_main_pager);
 		TabAdapter = new ContainerDetails_TabPagerAdapter(
 				getSupportFragmentManager());
 		Tab = (ViewPager) findViewById(R.id.containerInfo_pager);

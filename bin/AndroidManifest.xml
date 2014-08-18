@@ -23,12 +23,12 @@
         android:label="@string/app_name"
         android:theme="@style/AppBaseTheme" >
         <activity
-            android:name="com.amirab_soft.containerhub.MainActivity"
+            android:name="com.amirab_soft.containerhub.MainMenuActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait" >
         </activity>
         <activity
-            android:name="com.amirab_soft.containerhub.LoginActivity"
+            android:name="com.amirab_soft.containerhub.LoginWithEmailActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:windowSoftInputMode="adjustResize|stateVisible" >
@@ -55,7 +55,7 @@
 
         <!-- Facebook Activity -->
         <activity
-            android:name="com.amirab_soft.containerhub.FacebookMain"
+            android:name="com.amirab_soft.containerhub.LoginWithFacebookActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

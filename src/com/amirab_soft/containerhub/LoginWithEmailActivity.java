@@ -9,6 +9,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.amirab_soft.containerhub_helpers.CurrentUser;
 import com.amirab_soft.containerhub_helpers.JSONParser;
 
 import android.animation.Animator;
@@ -32,7 +33,7 @@ import android.widget.TextView;
  * Activity which displays a login screen to the user, offering registration as
  * well.
  */
-public class LoginActivity extends Activity {
+public class LoginWithEmailActivity extends Activity {
 	/** 
 	 * Andam code
 	 */
@@ -79,7 +80,7 @@ public class LoginActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 
-		setContentView(R.layout.activity_login);
+		setContentView(R.layout.login_with_email);
 
 		// Set up the login form.
 		mEmail = getIntent().getStringExtra(EXTRA_EMAIL);
@@ -282,7 +283,7 @@ public class LoginActivity extends Activity {
 			showProgress(false);
 
 			if (success) {
-				Intent intent = new Intent(getBaseContext(), MainActivity.class);
+				Intent intent = new Intent(getBaseContext(), MainMenuActivity.class);
 				startActivity(intent);
 				mPasswordView.setText("");
 				mEmailView.setText("");

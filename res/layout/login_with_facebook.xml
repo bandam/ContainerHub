@@ -12,6 +12,15 @@
         android:layout_marginTop="30dp"
         />
 
+    <Button
+        android:id="@+id/loginWithEmailBtn"
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="30dp"
+        android:text="Login with Email &amp; Password" />
+
     <LinearLayout
         android:id="@+id/facebookLogin_userDetailsContinuePanel"
         android:layout_width="match_parent"
@@ -42,7 +51,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:minHeight="20dp"
+            android:minHeight="40dp"
             android:text="Continue" />
 
     </LinearLayout>

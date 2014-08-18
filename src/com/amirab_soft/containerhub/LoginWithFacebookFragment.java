@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.amirab_soft.containerhub_helpers.CurrentUser;
 import com.facebook.Request;
 import com.facebook.Request.GraphUserCallback;
 import com.facebook.Response;
@@ -21,10 +22,11 @@ import com.facebook.UiLifecycleHelper;
 import com.facebook.model.GraphUser;
 import com.facebook.widget.LoginButton;
 
-public class FacebookFragment extends Fragment {
+public class LoginWithFacebookFragment extends Fragment {
 	
 	private static final String TAG = "FacebookFragment";
 	Button continueBtn;
+	Button loginWithEmailBtn;
 	View userDetailsContinueView;
 	TextView userNametxtv;
 	
@@ -40,7 +42,7 @@ public class FacebookFragment extends Fragment {
 	public View onCreateView(LayoutInflater inflater, 
 			ViewGroup container, 
 			Bundle savedInstanceState) {
-		View view = inflater.inflate(R.layout.faceboook_main, container, false);
+		View view = inflater.inflate(R.layout.login_with_facebook, container, false);
 		
 		LoginButton authButton = (LoginButton) view.findViewById(R.id.authButton);
 		authButton.setFragment(this);
@@ -51,11 +53,24 @@ public class FacebookFragment extends Fragment {
 		userDetailsContinueView = view.findViewById(R.id.facebookLogin_userDetailsContinuePanel);
 		userNametxtv = (TextView)view.findViewById(R.id.facebookLoging_username);
 		
+		loginWithEmailBtn = (Button)view.findViewById(R.id.loginWithEmailBtn);
+		
+		
+		
 		continueBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
-		        Intent intent = new Intent(getActivity().getBaseContext(), MainActivity.class);
+		        Intent intent = new Intent(getActivity().getBaseContext(), MainMenuActivity.class);
 				startActivity(intent);
+			}
+		});
+		
+		loginWithEmailBtn.setOnClickListener(new View.OnClickListener() {
+			
+			@Override
+			public void onClick(View v) {
+				Intent loginWithEmailIntent = new Intent(getActivity().getBaseContext(), LoginWithEmailActivity.class);
+				startActivity(loginWithEmailIntent);
 			}
 		});
         
@@ -106,7 +121,7 @@ public class FacebookFragment extends Fragment {
     					CurrentUser currentUser = CurrentUser.getInstance();
 						currentUser.setUsername(user.getUsername());
 						currentUser.setEmail("");
-						currentUser.setCurrentCity(user.getLocation().getName());
+						currentUser.setCurrentCity("Bergen");//user.getLocation().getName());
 						currentUser.setPhone("");
 						currentUser.setUid(user.getId());
 						currentUser.setName(user.getName());
@@ -117,7 +132,7 @@ public class FacebookFragment extends Fragment {
                         Log.v(TAG, "User FirstName : " + user.getFirstName());*/
                         //Log.v(TAG,user.asMap().get("email").toString());
 						
-						Intent intent = new Intent(getActivity().getBaseContext(), MainActivity.class);
+						Intent intent = new Intent(getActivity().getBaseContext(), MainMenuActivity.class);
 						startActivity(intent);
                     }
 					
@@ -152,11 +167,13 @@ public class FacebookFragment extends Fragment {
     		CurrentUser currentUser = CurrentUser.getInstance();
 			userNametxtv.setText(currentUser.getName());
     		userDetailsContinueView.setVisibility(View.VISIBLE);
+    		loginWithEmailBtn.setVisibility(View.GONE);
 			
     		Log.i(TAG, "Logged in...");
     		
         } else if (state.isClosed()) {
         	userDetailsContinueView.setVisibility(View.GONE);
+        	loginWithEmailBtn.setVisibility(View.VISIBLE);
         	Log.i(TAG, "Logged out...");
         }
     }
