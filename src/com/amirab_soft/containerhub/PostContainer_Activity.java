@@ -67,7 +67,6 @@ public class PostContainer_Activity extends Activity {
 	EditText container_palletsAvailable;
 	EditText container_cartonPrice;
 	EditText container_cartonsAvailable;
-
 	EditText container_ownerName;
 	EditText container_ownerPhone;
 	EditText container_ownerEmail;
@@ -78,7 +77,7 @@ public class PostContainer_Activity extends Activity {
 	String the_string_response, error;
 	int contentLength;
 	String res;
-	// end
+	
 
 	// Date picker variable
 	private int selectedDateType = 0;
@@ -88,6 +87,7 @@ public class PostContainer_Activity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.post_container_activity);
 
+		// Finding and initializing form controls
 		containerImage = (ImageView) findViewById(R.id.post_container_containerImage);
 		Button btn_selectImg = (Button) findViewById(R.id.post_contn_selectImg);
 		Button btn_camCapture = (Button) findViewById(R.id.post_contn_capturecameraImg);
@@ -175,7 +175,6 @@ public class PostContainer_Activity extends Activity {
 	Calendar myCalendar = Calendar.getInstance();
 
 	DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
-
 		@Override
 		public void onDateSet(DatePicker view, int year, int monthOfYear,
 				int dayOfMonth) {
@@ -216,6 +215,11 @@ public class PostContainer_Activity extends Activity {
 		}
 	}
 
+	
+	/**
+	 * Responding
+	 * 
+	 * **/
 	@Override
 	protected void onActivityResult(int requestCode, int resultCode,
 			Intent imageReturnedIntent) {

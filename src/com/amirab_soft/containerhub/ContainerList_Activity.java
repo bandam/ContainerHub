@@ -15,9 +15,11 @@ import android.os.Build;
 import android.os.Bundle;
 
 import com.amirab_soft.containerhub_helpers.JSONParser;
+import com.amirab_soft.containerhub_helpers_comparators.*;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
@@ -215,6 +217,7 @@ public class ContainerList_Activity extends Activity {
 		protected void onPostExecute(final Boolean success) {
 			showProgress(false);
 			if (!containerList.isEmpty()) {
+				Collections.sort(containerList, new ContainerDepartureDateComparator());
 				adapter.notifyDataSetChanged();
 			} else {
 				adapter.notifyDataSetChanged();

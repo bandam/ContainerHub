@@ -13,9 +13,13 @@ public class MainMenuFragement extends Fragment{
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
 		View rootView = inflater.inflate(R.layout.main_menu_fragment, container, false);
 		
+		// Initializing main menu buttons
 		Button postContainerButton = (Button)rootView.findViewById(R.id.containerDetails_emailOwner);
 		Button searchForContianerButton = (Button)rootView.findViewById(R.id.containerDetails_callOwner);
 		
+		
+		// Attatching a listner to post container button to trigger
+		//post container activity
 		postContainerButton.setOnClickListener(new Button.OnClickListener(){
 
 			@Override
@@ -27,6 +31,8 @@ public class MainMenuFragement extends Fragment{
 		});
 		
 		
+		//Attacching a listener to search container button to trigger
+		//Search container activity
 		searchForContianerButton.setOnClickListener(new Button.OnClickListener(){
 
 			@Override

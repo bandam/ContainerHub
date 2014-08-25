@@ -99,6 +99,7 @@ public class MainMenuActivity extends Activity {
 		}
 	}
 
+	//Listener for slide menu items
 	class SlideitemListener implements ListView.OnItemClickListener {
 		@Override
 		public void onItemClick(AdapterView<?> parent, View view, int position,
@@ -107,6 +108,10 @@ public class MainMenuActivity extends Activity {
 		}
 	}
 
+	/**
+	 * Selects the appropriate fragment to display based on user
+	 * selected menu item
+	 * */
 	@SuppressLint("NewApi")
 	private void updateDisplay(int position) {
 		Fragment fragment = null;
@@ -133,6 +138,7 @@ public class MainMenuActivity extends Activity {
 
 		}
 
+		// Insert the appropriate fragment into the Activity based on menu item selected
 		if (fragment != null) {
 			FragmentManager fragmentManager = getFragmentManager();
 			FragmentTransaction transaction = fragmentManager
@@ -194,10 +200,6 @@ public class MainMenuActivity extends Activity {
 		return super.onPrepareOptionsMenu(menu);
 	}
 
-	/**
-	 * When using the ActionBarDrawerToggle, you must call it during
-	 * onPostCreate() and onConfigurationChanged()...
-	 */
 
 	@Override
 	protected void onPostCreate(Bundle savedInstanceState) {

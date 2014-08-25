@@ -53,7 +53,7 @@ public class ContainerInfo_Main extends FragmentActivity {
 			}
 		};
 		
-		// Add New Tab
+		// Adding the tabs for contatinerDetials fragment and containerLocation fragments
 		actionBar.addTab(actionBar.newTab().setText("Container Details")
 				.setTabListener(tabListener));
 		actionBar.addTab(actionBar.newTab().setText("Location")
