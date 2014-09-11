@@ -1,5 +1,9 @@
 
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/container_list_menu_sortBtn"
+        android:title="sort"
+        android:icon="@drawable/sort"
+        android:showAsAction="always"/>
     <item android:id="@+id/container_list_menu_searchBtn"
           android:title="@string/action_settings"
           android:icon="@drawable/ic_action_search"

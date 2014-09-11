@@ -66,6 +66,19 @@
     <string name="promt_containerList_noResults">No containers were found that match your search. 
         Please modify your search and try again.</string>
     <string name="title_containerList_searchAgainBtn">Search Again</string>
+    
+    <!-- SortContainers Fragment -->
+    <string name="sortbyfragement_title">Sort by: </string>
+    <string-array
+        name = "sortbyfragment_sortcriteria">
+        <item>Departure Date</item>
+        <item>Arrival Date</item>
+        <item>Pallet Price</item>
+        <item>Carton Price</item>
+        <item>Pallets Available</item>
+        <item>Cartons Available</item>
+        <item>Container Progress</item>
+    </string-array>
 
     
     <!-- Main Activity String -->

@@ -6,6 +6,8 @@ import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.drawable.Drawable;
+import android.support.v4.app.DialogFragment;
+import android.support.v4.app.FragmentActivity;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -20,6 +22,7 @@ import com.amirab_soft.containerhub_helpers_comparators.*;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 import org.apache.http.NameValuePair;
@@ -32,14 +35,17 @@ import com.amirab_soft.containerhub.R;
 import com.amirab_soft.containerhub_helpers.ContainerItem;
 import com.amirab_soft.containerhub_helpers.ContainerItemCustomAdapter;
 import com.amirab_soft.containerhub_helpers.CurrentContainer;
+import com.amirab_soft.containerhub_helpers.SortByDialogeFragment;
+import com.amirab_soft.containerhub_helpers.SortByDialogeFragment.SortByDialogListener;
 
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 
-public class ContainerList_Activity extends Activity {
-	
+public class ContainerList_Activity extends FragmentActivity implements
+		SortByDialogListener {
+
 	// Tags for container details
 	private static final String TAG_SUCCESS = "success";
 	private static final String TAG_CONTAINER = "containers";
@@ -63,7 +69,7 @@ public class ContainerList_Activity extends Activity {
 	private static final String TAG_NOCARTONSAVAILABLE = "noCartonsAvailable";
 	private static final String TAG_LOAD_CONTAINER_URL = "http://woltonguesthouse.com/php/ch/get_containers.php";
 
-	//Asinc Task variables
+	// Asinc Task variables
 	private JSONParser jsonParser = new JSONParser();
 	private LoadContainersTask loadContainerTask = null;
 	private List<ContainerItem> containerList;
@@ -77,7 +83,7 @@ public class ContainerList_Activity extends Activity {
 	private View noResultsView;
 	private Button searchAgainBtn;
 	private Button searchBtn;
-	
+
 	// Search parameters
 	private EditText edt_fromCountry;
 	private EditText edt_ToCountry;
@@ -89,27 +95,26 @@ public class ContainerList_Activity extends Activity {
 
 		// View rootView = inflater.inflate(R.layout.container_list_fragment,
 		// container, false);
-		listview = (ListView)findViewById(R.id.container_list_layout);
+		listview = (ListView) findViewById(R.id.container_list_layout);
 		mLoginFormView = listview;
 		mLoginStatusView = findViewById(R.id.load_status);
 		searchView = findViewById(R.id.container_list_searchView);
-		
+
 		// No results view variables
 		noResultsView = findViewById(R.id.noResultsView);
-		searchAgainBtn = (Button)findViewById(R.id.searchAgainBtn);
-		
+		searchAgainBtn = (Button) findViewById(R.id.searchAgainBtn);
 
 		containerList = new ArrayList<ContainerItem>();
 
 		adapter = new ContainerItemCustomAdapter(this, containerList);
 		listview.setAdapter(adapter);
-		
+
 		listview.setOnItemClickListener(new ContainerListItemListener());
-		searchBtn = (Button)findViewById(R.id.container_list_searchBtn);
-		
-		edt_fromCountry = (EditText)findViewById(R.id.containerList_search_FromCountry);
-		edt_ToCountry = (EditText)findViewById(R.id.containerList_search_ToCountry);
-		
+		searchBtn = (Button) findViewById(R.id.container_list_searchBtn);
+
+		edt_fromCountry = (EditText) findViewById(R.id.containerList_search_FromCountry);
+		edt_ToCountry = (EditText) findViewById(R.id.containerList_search_ToCountry);
+
 		searchBtn.setOnClickListener(new View.OnClickListener() {
 			@Override
 			public void onClick(View v) {
@@ -117,13 +122,13 @@ public class ContainerList_Activity extends Activity {
 				showProgress(true);
 				loadContainerTask = new LoadContainersTask();
 				loadContainerTask.execute();
-				
+
 			}
 		});
-		
+
 		//
 		searchAgainBtn.setOnClickListener(new View.OnClickListener() {
-			
+
 			@Override
 			public void onClick(View v) {
 				noResultsView.setVisibility(View.GONE);
@@ -132,10 +137,7 @@ public class ContainerList_Activity extends Activity {
 			}
 		});
 
-
 	}
-	
-	
 
 	public class LoadContainersTask extends AsyncTask<String, Void, Boolean> {
 
@@ -146,10 +148,10 @@ public class ContainerList_Activity extends Activity {
 			containerList.clear();
 
 			try {
-				
+
 				String str_fromCountry = edt_fromCountry.getText().toString();
 				String str_toCountry = edt_ToCountry.getText().toString();
-				
+
 				List<NameValuePair> param = new ArrayList<NameValuePair>();
 				param.add(new BasicNameValuePair("from", str_fromCountry));
 				param.add(new BasicNameValuePair("to", str_toCountry));
@@ -168,7 +170,7 @@ public class ContainerList_Activity extends Activity {
 							.getJSONArray(TAG_CONTAINER);
 					JSONArray containerjsonarray = containerjsonarray0
 							.getJSONArray(0);
-					
+
 					for (int i = 0; i < containerjsonarray.length(); i++) {
 						container = containerjsonarray.getJSONObject(i);
 						Drawable thumb_d;
@@ -176,22 +178,27 @@ public class ContainerList_Activity extends Activity {
 							URL thumb_u = new URL(
 									"http://www.woltonguesthouse.com/php/ch/containerImages/"
 											+ container
-													.getString(TAG_IMAGEDIRECTORY)+".jpg");
+													.getString(TAG_IMAGEDIRECTORY)
+											+ ".jpg");
 							thumb_d = Drawable.createFromStream(
 									thumb_u.openStream(), "src");
 
 							ContainerItem item = new ContainerItem(
-									(TAG_CONTAINER +" "+ i).toUpperCase(),
-									container.getString(TAG_LOCATION_CITY) + ", " + 
-									container.getString(TAG_LOCATION_COUNTRY),
+									(TAG_CONTAINER + " " + i).toUpperCase(),
+									container.getString(TAG_LOCATION_CITY)
+											+ ", "
+											+ container
+													.getString(TAG_LOCATION_COUNTRY),
 									container.getString(TAG_DEPARTUREDATE),
 									container.getString(TAG_ARRIVALDATE),
-									container.getString(TAG_DESTINATION_CITY) + ", "+
-									container.getString(TAG_DESTINATION_COUNTRY),
+									container.getString(TAG_DESTINATION_CITY)
+											+ ", "
+											+ container
+													.getString(TAG_DESTINATION_COUNTRY),
 									thumb_d, container.getInt(TAG_STATUS),
-									container.getInt(TAG_UID),
-									container.getInt(TAG_CONTAINERID),
-									container.getString(TAG_OWNERNAME),
+									container.getInt(TAG_UID), container
+											.getInt(TAG_CONTAINERID), container
+											.getString(TAG_OWNERNAME),
 									container.getString(TAG_OWNEREMAIL),
 									container.getString(TAG_OWNERCURCITY),
 									container.getString(TAG_OWNERTELL),
@@ -207,7 +214,7 @@ public class ContainerList_Activity extends Activity {
 					}
 				}
 			} catch (JSONException exp) {
-				
+
 				Log.d("JSON DecodeContainerlist", exp.toString());
 			}
 			return true;
@@ -217,12 +224,11 @@ public class ContainerList_Activity extends Activity {
 		protected void onPostExecute(final Boolean success) {
 			showProgress(false);
 			if (!containerList.isEmpty()) {
-				Collections.sort(containerList, new ContainerDepartureDateComparator());
-				adapter.notifyDataSetChanged();
+				sortContainers(0);
 			} else {
 				adapter.notifyDataSetChanged();
 				noResultsView.setVisibility(View.VISIBLE);
-				
+
 			}
 
 		}
@@ -268,59 +274,133 @@ public class ContainerList_Activity extends Activity {
 			mLoginFormView.setVisibility(show ? View.GONE : View.VISIBLE);
 		}
 	}
-	
-	private class ContainerListItemListener implements ListView.OnItemClickListener{
+
+	/* Listener for container list items*/
+	private class ContainerListItemListener implements
+			ListView.OnItemClickListener {
 
 		@Override
 		public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
 				long arg3) {
-			Intent containerDetailsIntent = new Intent(getBaseContext(),ContainerInfo_Main.class);
-			startActivity(containerDetailsIntent);
-			
-			//Get selected Container from list and save it to the singleton for use in other activities
-			CurrentContainer currentContainer = CurrentContainer.getInstance();
-			ContainerItem selectedContainer = containerList.get(arg2);
-			
-			currentContainer.setArrival_date(selectedContainer.getArrivalDate());
-			currentContainer.setDeparture_date(selectedContainer.getDepartureDate());
-			currentContainer.setLocation(selectedContainer.getLocation());
-			currentContainer.setDestination(selectedContainer.getDestination());
-			currentContainer.setIcon(selectedContainer.getIcon());
-			currentContainer.setProgress(selectedContainer.getProgess());
-			currentContainer.setCid(selectedContainer.getCid());
-			currentContainer.setUid(selectedContainer.getUid());
-			currentContainer.setOwner_name(selectedContainer.getOwner_name());
-			currentContainer.setOwner_email(selectedContainer.getOwner_email());
-			currentContainer.setOwner_current_city(selectedContainer.getOwner_current_city());
-			currentContainer.setOwner_tell(selectedContainer.getOwner_tell());
-			currentContainer.setPalletPrice(selectedContainer.getPalletPrice());
-			currentContainer.setCartonPrice(selectedContainer.getCartonPrice());
-			currentContainer.setNoPalletsAvailable(selectedContainer.getNoPalletsAvailable());
-			currentContainer.setNoCartonsAvailable(selectedContainer.getNoCartonsAvailable());
-			
+			showContainerDetails(arg2);
 		}
-		
+
 	}
-	
-	
-	
-	//
+
+	/*
+	 * Save user selected index as current container and start container details
+	 * activity
+	 */
+	public void showContainerDetails(int selectedIndex) {
+		Intent containerDetailsIntent = new Intent(getBaseContext(),
+				ContainerInfo_Main.class);
+		startActivity(containerDetailsIntent);
+
+		// Get selected Container from list and save it to the singleton for
+		// use in other activities
+		CurrentContainer currentContainer = CurrentContainer.getInstance();
+		ContainerItem selectedContainer = containerList.get(selectedIndex);
+
+		currentContainer.setArrival_date(selectedContainer.getArrivalDate());
+		currentContainer
+				.setDeparture_date(selectedContainer.getDepartureDate());
+		currentContainer.setLocation(selectedContainer.getLocation());
+		currentContainer.setDestination(selectedContainer.getDestination());
+		currentContainer.setIcon(selectedContainer.getIcon());
+		currentContainer.setProgress(selectedContainer.getProgess());
+		currentContainer.setCid(selectedContainer.getCid());
+		currentContainer.setUid(selectedContainer.getUid());
+		currentContainer.setOwner_name(selectedContainer.getOwner_name());
+		currentContainer.setOwner_email(selectedContainer.getOwner_email());
+		currentContainer.setOwner_current_city(selectedContainer
+				.getOwner_current_city());
+		currentContainer.setOwner_tell(selectedContainer.getOwner_tell());
+		currentContainer.setPalletPrice(selectedContainer.getPalletPrice());
+		currentContainer.setCartonPrice(selectedContainer.getCartonPrice());
+		currentContainer.setNoPalletsAvailable(selectedContainer
+				.getNoPalletsAvailable());
+		currentContainer.setNoCartonsAvailable(selectedContainer
+				.getNoCartonsAvailable());
+	}
+
+	/* Inflate the top menu */
 	@Override
 	public boolean onCreateOptionsMenu(Menu menu) {
 		getMenuInflater().inflate(R.menu.container_list_search_menu, menu);
 		return true;
 	}
+
+	/* Respond to top menu item selected */
 	@Override
 	public boolean onOptionsItemSelected(MenuItem item) {
-	    // Handle item selection
-	    switch (item.getItemId()) {
-	    case R.id.container_list_menu_searchBtn:
-	    	noResultsView.setVisibility(View.GONE);
-			searchView.setVisibility(View.VISIBLE);
-			listview.setVisibility(View.GONE);
-	        return true;
-	    default:
-	        return super.onOptionsItemSelected(item);
-	    }
+		// Handle item selection
+		switch (item.getItemId()) {
+		case R.id.container_list_menu_searchBtn:
+			showSearchOptions();
+			return true;
+
+		case R.id.container_list_menu_sortBtn:
+			showSortByDialog();
+			return true;
+		default:
+			return super.onOptionsItemSelected(item);
+		}
+	}
+
+	/* Show search Options view, hide listview and 'no hit' error message */
+	public void showSearchOptions() {
+		noResultsView.setVisibility(View.GONE);
+		searchView.setVisibility(View.VISIBLE);
+		listview.setVisibility(View.GONE);
+	}
+
+	/* Show the sort-by dialog */
+	public void showSortByDialog() {
+		SortByDialogeFragment dialog = new SortByDialogeFragment();
+		dialog.show(getSupportFragmentManager(), "SortByDialogfragment");
+	}
+
+	/* Respond to sort-by dialog item clicked */
+	@Override
+	public void onSortByDialogItemSelected(DialogFragment dialog, int where) {
+		sortContainers(where);
+		Log.d("Container List sortBy", Integer.toString(where));
+	}
+	
+	
+	/* Sort the containers base on user selected index */
+	public void sortContainers(int sortBy){
+		Comparator<ContainerItem> comparator;
+		
+		switch(sortBy){
+		case 0:
+			comparator = new ContainerDepartureDateComparator();
+			break;
+		case 1:
+			comparator = new ContainerArrivalDateComparator();
+			break;
+		case 2:
+			comparator = new ContainerPalletPriceComparator();
+			break;
+		case 3:
+			comparator = new ContainerCartonPriceComparator();
+			break;
+		case 4:
+			comparator = new ContainerPalletsAvailableComparator();
+			break;
+		case 5:
+			comparator = new ContainerCartonsAvailableComparator();
+			break;
+		case 6:
+			comparator = new ContainerProgressComparator();
+			break;
+			
+			default:
+				comparator = new ContainerDepartureDateComparator();
+		}
+		
+		
+		Collections.sort(containerList, comparator);
+		adapter.notifyDataSetChanged();
 	}
 }

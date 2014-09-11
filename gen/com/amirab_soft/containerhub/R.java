@@ -11,10 +11,11 @@ public final class R {
     public static final class array {
         /**  Icon Resources 
          */
-        public static final int icons=0x7f090001;
+        public static final int icons=0x7f090002;
+        public static final int sortbyfragment_sortcriteria=0x7f090000;
         /**  Main Activity String 
          */
-        public static final int titles=0x7f090000;
+        public static final int titles=0x7f090001;
     }
     public static final class attr {
         /** <p>Must be a boolean value, either "<code>true</code>" or "<code>false</code>".
@@ -213,7 +214,7 @@ containing a value of this type.
         public static final int com_facebook_list_section_header_background=0x7f02000e;
         public static final int com_facebook_loginbutton_silver=0x7f02000f;
         public static final int com_facebook_logo=0x7f020010;
-        public static final int com_facebook_picker_default_separator_color=0x7f020034;
+        public static final int com_facebook_picker_default_separator_color=0x7f020035;
         public static final int com_facebook_picker_item_background=0x7f020011;
         public static final int com_facebook_picker_list_focused=0x7f020012;
         public static final int com_facebook_picker_list_longpressed=0x7f020013;
@@ -249,13 +250,14 @@ containing a value of this type.
         public static final int next_icon=0x7f020031;
         public static final int palet=0x7f020032;
         public static final int progress_bar_color=0x7f020033;
+        public static final int sort=0x7f020034;
     }
     public static final class id {
         public static final int ImageView01=0x7f040041;
         public static final int TableRow01=0x7f040069;
         public static final int TableRow02=0x7f040064;
         public static final int TextView01=0x7f04006a;
-        public static final int action_forgot_password=0x7f040074;
+        public static final int action_forgot_password=0x7f040075;
         public static final int authButton=0x7f04004d;
         public static final int com_facebook_body_frame=0x7f040015;
         public static final int com_facebook_button_xout=0x7f040017;
@@ -301,7 +303,8 @@ containing a value of this type.
         public static final int containerList_search_FromCountry=0x7f04003c;
         public static final int containerList_search_ToCountry=0x7f04003a;
         public static final int container_list_layout=0x7f04003e;
-        public static final int container_list_menu_searchBtn=0x7f040073;
+        public static final int container_list_menu_searchBtn=0x7f040074;
+        public static final int container_list_menu_sortBtn=0x7f040073;
         public static final int container_list_searchBtn=0x7f04003d;
         public static final int container_list_searchView=0x7f040039;
         public static final int container_progressbar=0x7f040043;
@@ -410,7 +413,7 @@ containing a value of this type.
         public static final int action_sign_in_short=0x7f07003f;
         /**  Facebook login 
          */
-        public static final int app_id=0x7f070058;
+        public static final int app_id=0x7f070059;
         public static final int app_name=0x7f07001a;
         public static final int com_facebook_choose_friends=0x7f07000f;
         public static final int com_facebook_dialogloginactivity_ok_button=0x7f070000;
@@ -438,18 +441,18 @@ containing a value of this type.
         public static final int com_facebook_usersettingsfragment_log_in_button=0x7f070008;
         public static final int com_facebook_usersettingsfragment_logged_in=0x7f070009;
         public static final int com_facebook_usersettingsfragment_not_logged_in=0x7f07000a;
-        public static final int containerInfoFragment_arrivalDate=0x7f070056;
-        public static final int containerInfoFragment_button_call_text=0x7f070050;
-        public static final int containerInfoFragment_button_email_text=0x7f070051;
-        public static final int containerInfoFragment_cartton_Image_desription=0x7f07004f;
-        public static final int containerInfoFragment_heading_cartonPrice=0x7f070054;
-        public static final int containerInfoFragment_heading_palletPrice=0x7f070052;
-        public static final int containerInfoFragment_heading_palletsAvailable=0x7f070053;
+        public static final int containerInfoFragment_arrivalDate=0x7f070057;
+        public static final int containerInfoFragment_button_call_text=0x7f070051;
+        public static final int containerInfoFragment_button_email_text=0x7f070052;
+        public static final int containerInfoFragment_cartton_Image_desription=0x7f070050;
+        public static final int containerInfoFragment_heading_cartonPrice=0x7f070055;
+        public static final int containerInfoFragment_heading_palletPrice=0x7f070053;
+        public static final int containerInfoFragment_heading_palletsAvailable=0x7f070054;
         /**  Container Info Fragment Strings 
          */
-        public static final int containerInfoFragment_pallet_image_description=0x7f07004e;
-        public static final int containerInfoFragment_progress=0x7f070057;
-        public static final int containerInfofragment_heading_cartonsAvailable=0x7f070055;
+        public static final int containerInfoFragment_pallet_image_description=0x7f07004f;
+        public static final int containerInfoFragment_progress=0x7f070058;
+        public static final int containerInfofragment_heading_cartonsAvailable=0x7f070056;
         public static final int container_item_title_departureDate=0x7f070022;
         /**  List Container Fragment Strings 
          */
@@ -497,6 +500,9 @@ containing a value of this type.
         public static final int prompt_email=0x7f07003c;
         public static final int prompt_password=0x7f07003d;
         public static final int promt_containerList_noResults=0x7f07004c;
+        /**  SortContainers Fragment 
+         */
+        public static final int sortbyfragement_title=0x7f07004e;
         /**  Container List Activity 
          */
         public static final int title_containerList_Activity=0x7f070047;
