@@ -39,7 +39,7 @@ public class LoginWithEmailActivity extends Activity {
 	 */
 	JSONParser jsonParser = new JSONParser();
 	//user authentication url
-	private static final String url_user_details = "http://woltonguesthouse.com/php/ch/get_user_details.php";
+	private static final String url_user_details = "http://berimaandam.se/WoltonLocal-backup/php/ch/get_user_details.php";
 	
 	//JSON Node names
 	private static final String TAG_SUCCESS = "success";

@@ -67,7 +67,7 @@ public class ContainerList_Activity extends FragmentActivity implements
 	private static final String TAG_CARTONPRICE = "cartonPrice";
 	private static final String TAG_NOPALLETSAVAILABLE = "noPalletsAvailable";
 	private static final String TAG_NOCARTONSAVAILABLE = "noCartonsAvailable";
-	private static final String TAG_LOAD_CONTAINER_URL = "http://woltonguesthouse.com/php/ch/get_containers.php";
+	private static final String TAG_LOAD_CONTAINER_URL = "http://berimaandam.se/WoltonLocal-backup/php/ch/get_containers.php";
 
 	// Asinc Task variables
 	private JSONParser jsonParser = new JSONParser();
@@ -176,7 +176,7 @@ public class ContainerList_Activity extends FragmentActivity implements
 						Drawable thumb_d;
 						try {
 							URL thumb_u = new URL(
-									"http://www.woltonguesthouse.com/php/ch/containerImages/"
+									"http://www.berimaandam.se/WoltonLocal-backup/php/ch/containerImages/"
 											+ container
 													.getString(TAG_IMAGEDIRECTORY)
 											+ ".jpg");
@@ -226,7 +226,7 @@ public class ContainerList_Activity extends FragmentActivity implements
 			if (!containerList.isEmpty()) {
 				sortContainers(0);
 			} else {
-				adapter.notifyDataSetChanged();
+				//adapter.notifyDataSetChanged();
 				noResultsView.setVisibility(View.VISIBLE);
 
 			}
